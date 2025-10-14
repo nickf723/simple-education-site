@@ -36,6 +36,26 @@ body {
     background-color: #444;
 }
 
+/* --- Sidebar Submenu Styling --- */
+
+/* Hide submenus by default */
+.submenu {
+    display: none;
+    list-style-type: none; /* Removes bullets */
+    padding-left: 20px; /* Indents the submenu items */
+}
+
+/* When a parent list item is active, show its submenu */
+li.active .submenu {
+    display: block;
+}
+
+/* Add a special style for the link of the page you are currently on */
+a.current-page {
+    color: #00c7b1; /* Highlight color */
+    font-weight: bold;
+}
+
 /* --- Main Content Area --- */
 .content {
     flex-grow: 1; /* Allows the content to take up the remaining space */
