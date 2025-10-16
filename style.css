@@ -87,6 +87,37 @@ a.current-page {
     font-size: 1.2rem;
 }
 
+.submenu {
+    display: none;
+    list-style-type: none;
+    padding: 0;
+    padding-left: 15px;
+    border-left: 1px solid var(--borders-low-contrast);
+    margin-left: 8px
+}
+
+.submenu a {
+    font-size: .9em;
+    color: var(--text-muted);
+}
+
+.submenu a.current-page {
+    color: var(--accent-color);
+}
+
+.submenu a:hover {
+    color: var(--primary-bg);
+}
+
+.submenu .submenu {
+    padding-left: 12px;
+    margin-left: 12px; 
+}
+
+li.active > .submenu {
+    display: block;
+}
+
 /* --- 4. Page Content Components --- */
 .content h1, .content h2 {
     color: var(--text-color);

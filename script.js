@@ -14,17 +14,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function activateCurrentMenuItem() {
     const currentPage = window.location.pathname.split("/").pop() || "index.html";
-    const sidebarLinks = document.querySelectorAll('#sidebar-container a');
+    const allLinks = document.querySelectorAll('#sidebar-container a');
+    let currentLink = null;
 
-    sidebarLinks.forEach(link => {
+    // First, find the exact link for the current page
+    allLinks.forEach(link => {
         if (link.getAttribute('href') === currentPage) {
             link.classList.add('current-page');
-            const parentLi = link.closest('li');
-            if (parentLi) {
-                parentLi.classList.add('active'); // Keep the current section open
-            }
+            currentLink = link;
         }
     });
+    
+    // If the current link was found, traverse up its parents
+    if (currentLink) {
+        let parentLi = currentLink.closest('li');
+        
+        // Loop upwards through parent <li> elements, adding 'active' to them
+        // This will open every parent folder of the current page.
+        while (parentLi) {
+            parentLi.classList.add('active');
+            parentLi = parentLi.parentElement.closest('li');
+        }
+    }
 }
 
 function initializeMenuToggle() {
