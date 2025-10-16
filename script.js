@@ -1,29 +1,17 @@
-// This function runs when the entire HTML document is ready
 document.addEventListener("DOMContentLoaded", function() {
-    // Fetch the sidebar's HTML content
-    fetch("/sidebar.html")
-        .then(response => {
-            // Check if the file was found
-            if (!response.ok) {
-                throw new Error("sidebar.html not found");
-            }
-            return response.text();
-        })
+    fetch("sidebar.html")
+        .then(response => response.text())
         .then(data => {
-            // Put the sidebar HTML into its container
             document.getElementById("sidebar-container").innerHTML = data;
             
-            // Now that the sidebar exists, make its links and menu button work
+            // Initialize all our features after the sidebar is loaded
             activateCurrentMenuItem();
             initializeMenuToggle();
+            initializeCollapsibleMenu(); // <-- New function call
         })
-        .catch(error => {
-            // If the fetch fails, log an error to the console
-            console.error("Error loading sidebar:", error);
-        });
+        .catch(error => console.error("Error loading sidebar:", error));
 });
 
-// This function finds the link for the current page and highlights it
 function activateCurrentMenuItem() {
     const currentPage = window.location.pathname.split("/").pop() || "index.html";
     const sidebarLinks = document.querySelectorAll('#sidebar-container a');
@@ -31,22 +19,32 @@ function activateCurrentMenuItem() {
     sidebarLinks.forEach(link => {
         if (link.getAttribute('href') === currentPage) {
             link.classList.add('current-page');
-            const parentSubmenu = link.closest('.submenu');
-            if (parentSubmenu) {
-                parentSubmenu.parentElement.classList.add('active');
+            const parentLi = link.closest('li');
+            if (parentLi) {
+                parentLi.classList.add('active'); // Keep the current section open
             }
         }
     });
 }
 
-// This function makes the hamburger menu button work on mobile
 function initializeMenuToggle() {
     const menuButton = document.getElementById('menu-toggle');
     const sidebar = document.getElementById('sidebar-container');
-
     if (menuButton && sidebar) {
-        menuButton.addEventListener('click', function() {
-            sidebar.classList.toggle('visible');
-        });
+        menuButton.addEventListener('click', () => sidebar.classList.toggle('visible'));
     }
+}
+
+// NEW: This function handles the expand/collapse clicks
+function initializeCollapsibleMenu() {
+    const toggles = document.querySelectorAll('.menu-header');
+
+    toggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const parentLi = toggle.closest('li');
+            if (parentLi) {
+                parentLi.classList.toggle('active');
+            }
+        });
+    });
 }
