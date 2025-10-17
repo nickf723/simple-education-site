@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Topic Name] - Educational Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0KOVEMVIhbCwHMAq2Cug3goRjiASclpEBIzkw3sibASHoCadwHwmV" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGhcvrKlCjBhr" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div id="sidebar-container"></div>
+    <main class="content">
+        <button id="menu-toggle">☰</button>
+
+        <article class="topic-overview">
+            <h1>[Topic Name]</h1>
+            <p>[A short description of the topic, its importance, and what will be covered.]</p>
+        </article>
+        
+        <div class="alert alert-info">
+            <strong>Heads Up!</strong> This is an important concept that builds on [Previous Topic].
+        </div>
+        
+        <section class="media-section">
+            <h2>Introductory Video</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/your_video_id_here" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section>
+            <h2>Example with Mathematical Notation</h2>
+            <p>
+                We can use KaTeX to write inline formulas like the Pythagorean theorem, $a^2 + b^2 = c^2$, right within a sentence.
+                For larger, centered equations, we use double dollar signs:
+            </p>
+            $$ \int_{a}^{b} x^2 dx = \frac{b^3}{3} - \frac{a^3}{3} $$
+            <p>This makes presenting complex information much cleaner and more professional. 🧪</p>
+        </section>
+
+        <aside class="key-concepts">
+            <h3>Key Concepts</h3>
+            <ul>
+                <li><strong>Term 1:</strong> A brief, clear definition of the first key term.</li>
+                <li><strong>Formula 1:</strong> The most important formula to remember, e.g., $E=mc^2$.</li>
+                <li><strong>Core Idea:</strong> A sentence summarizing the main takeaway from this topic.</li>
+            </ul>
+        </aside>
+
+        <section class="knowledge-check">
+            <h2>Check Your Understanding</h2>
+            <details>
+                <summary><strong>Question 1:</strong> What is the value of $x$ in the equation $2x + 3 = 11$?</summary>
+                <p class="answer"><strong>Answer:</strong> $x = 4$. To solve, subtract 3 from both sides to get $2x = 8$, then divide by 2.</p>
+            </details>
+            <details>
+                <summary><strong>Question 2:</strong> What does the term 'function' mean in algebra?</summary>
+                <p class="answer"><strong>Answer:</strong> A function is a rule that assigns each input value exactly one output value.</p>
+            </details>
+        </section>
+
+        <section class="additional-resources">
+            <h2>Additional Resources</h2>
+            <ul>
+                <li><a href="path/to/worksheet.pdf" download>Download the Practice Worksheet (PDF)</a></li>
+                <li><a href="https://www.khanacademy.org/" target="_blank">Explore more at Khan Academy</a></li>
+                <li><a href="/related-topic.html">Read about the next topic: [Next Topic Name]</a></li>
+            </ul>
+        </section>
+
+        <section class="subdomain-grid">
+            <a href="/subtopic1.html" class="subdomain-card"><h3>[Sub-Topic 1 Name]</h3><p>[Brief description of Sub-Topic 1.]</p></a>
+            <a href="/subtopic2.html" class="subdomain-card"><h3>[Sub-Topic 2 Name]</h3><p>[Brief description of Sub-Topic 2.]</p></a>
+            <a href="/subtopic3.html" class="subdomain-card"><h3>[Sub-Topic 3 Name]</h3><p>[Brief description of Sub-Topic 3.]</p></a>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
