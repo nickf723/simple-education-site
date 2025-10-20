@@ -275,3 +275,14 @@ a.current-page {
     width: 100%;
     height: 100%;
 }
+
+/* General rule to hide all sub-menus */
+.menu-list ul.sub-menu {
+    display: none;
+    padding-left: 20px; /* Indent nested items */
+}
+
+/* Show the sub-menu when the parent LI is active */
+.menu-list li.active > ul.sub-menu {
+    display: block;
+}

@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Algebra: An Overview - Educational Website</title>
+    <title>Algebra Explained</title>
     <link rel="stylesheet" href="themes/formal-sci-themes.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0KOVEMVIhbCwHMAq2Cug3goRjiASclpEBIzkw3sibASHoCadwHwmV" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGhcvrKlCjBhr" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
 </head>
 <body>
     <div id="sidebar-container"></div>
@@ -21,65 +19,47 @@
 
         <article class="topic-overview">
             <h1>Algebra: The Science of Generalization</h1>
-            <p>Welcome to Algebra. At its heart, algebra isn't just about solving for $x$; it's the powerful art of using symbols to generalize rules and relationships. It allows us to move from specific calculations (like $3 + 4 = 7$) to universal principles (like $a + b = b + a$) that hold true for all numbers.</p>
+            <p>At its heart, algebra is the powerful art of using symbols to generalize rules and relationships. This page covers the foundational concepts of solving for unknowns and understanding the relationships between variables.</p>
         </article>
-        
-        <div class="alert alert-info">
-            <strong>Starting Point:</strong> A solid grasp of Arithmetic is the foundation upon which all of algebra is built.
-        </div>
-        
-        <section>
-            <h2>What Are We Building With?</h2>
-            <p>Algebra gives us a language to describe patterns and solve puzzles. The basic building blocks of this language are:</p>
-            <ul>
-                <li><strong>Variables ($x, y, a, b$):</strong> Symbols that act as placeholders for numbers we don't know yet, or for quantities that can change.</li>
-                <li><strong>Expressions ($2x - 3$):</strong> Combinations of variables, numbers, and operations that represent a value.</li>
-                <li><strong>Equations ($2x - 3 = 7$):</strong> A statement that two expressions are equal, forming a complete "sentence" that we can often solve.</li>
-            </ul>
+
+        <section class="lesson-section">
+            <h2>Part 1: Equations & Inequalities</h2>
+            <p>This section focuses on the toolkit for solving for unknown values. An equation is like a balanced scale, and our goal is to find the value that keeps it in balance.</p>
+
+            <h3>The Foundation: What is an Equation?</h3>
+            <p>An equation states that two expressions are equal (e.g., $x+3=5$). Our goal is to find the value of the <strong>variable</strong> (the symbol, like $x$) that makes this statement true. We do this by keeping the "scale" balanced.</p>
+
+            <h3>One-Step & Two-Step Equations</h3>
+            <p>We solve equations using <strong>inverse operations</strong> to isolate the variable. Addition undoes subtraction, and multiplication undoes division. For two-step equations, we reverse the order of operations (undoing addition/subtraction first).</p>
+            <blockquote><strong>Example (Two-Step):</strong> Solve $3x - 4 = 11$.<br>
+            1. Add 4 to both sides: $3x = 15$.<br>
+            2. Divide both sides by 3: $x = 5$.
+            </blockquote>
+
+            <h3>Multi-Step & Special Cases</h3>
+            <p>For more complex equations, we first simplify by <strong>combining like terms</strong> or using the <strong>distributive property</strong> to remove parentheses. Sometimes, the variables will cancel out, leading to a true statement like $5=5$ (Infinite Solutions) or a false statement like $5=2$ (No Solution).</p>
+
+            <h3>Inequalities</h3>
+            <p>Inequalities (using $<, >$) are solved just like equations, with one golden rule: <strong>when you multiply or divide both sides by a negative number, you must flip the inequality sign.</strong></p>
+            <blockquote><strong>Example:</strong> Solve $-2x > 10$.<br>
+            Divide by -2 and flip the sign: $x < -5$.
+            </blockquote>
         </section>
 
-        <aside class="key-concepts">
-            <h3>The Core Goals of Algebra</h3>
-            <ul>
-                <li><strong>Solving for the Unknown:</strong> Finding the value of a variable that makes an equation true.</li>
-                <li><strong>Modeling Relationships:</strong> Using functions and equations to describe real-world phenomena, like the path of a thrown ball.</li>
-                <li><strong>Understanding Structure:</strong> Exploring the properties of mathematical systems and how they fit together.</li>
-            </ul>
-        </aside>
+        <section class="lesson-section">
+            <h2>Part 2: Functions</h2>
+            <p>Functions describe a specific relationship between an input and an output. For every one input, there is exactly one output.</p>
 
-        <section class="subdomain-map">
-            <h2>Your Learning Roadmap 🗺️</h2>
-            <p>Your journey through algebra will take you through several key territories. This is the path from foundational concepts to more advanced applications.</p>
-            
-            <div class="subdomain-card">
-                <h3>1. Equations & Inequalities</h3>
-                <p>This is where your journey begins. You'll learn the fundamental rules for manipulating and solving equations to find unknown values. This is the toolkit for almost everything that follows.</p>
-                <a href="equations-introduction.html" class="map-link">Start with Equations →</a>
-            </div>
+            <h3>What is a Function?</h3>
+            <p>Think of a function as a machine. You put an input (like a number) in, the machine follows a rule, and it produces a single output. We can use the <strong>Vertical Line Test</strong> on a graph to see if it's a function: if a vertical line touches the graph more than once, it's not a function.</p>
 
-            <div class="subdomain-card">
-                <h3>2. Functions</h3>
-                <p>Functions are the heart of modeling relationships. You'll explore how an input value relates to an output value, and learn to visualize these relationships on a graph.</p>
-                <a href="functions.html" class="map-link">Explore Functions →</a>
-            </div>
-
-            <div class="subdomain-card">
-                <h3>3. Polynomials</h3>
-                <p>Here, you'll dive deeper into algebraic expressions. Mastering polynomials is essential for tackling more complex equations and understanding the structure of functions.</p>
-                <a href="polynomials.html" class="map-link">Dive into Polynomials →</a>
-            </div>
-
-            <p style="text-align: center; margin-top: 20px;">Beyond these fundamentals lie advanced topics like <strong>Linear Algebra</strong> and <strong>Abstract Algebra</strong>, which have applications in fields from computer science to physics.</p>
+            <h3>Function Notation</h3>
+            <p>We use the notation $f(x)$ (read "f of x") to represent a function. This is a replacement for 'y' that makes the input-output relationship clear.</p>
+            <blockquote><strong>Example:</strong> If $f(x) = x^2 + 2$, find $f(3)$.<br>
+            Replace x with 3: $f(3) = (3)^2 + 2 = 9 + 2 = 11$.
+            </blockquote>
         </section>
 
-        <section class="additional-resources">
-            <h2>Further Exploration</h2>
-            <ul>
-                <li><a href="glossary.html">Browse the Glossary of Algebraic Terms</a></li>
-                <li><a href="https://www.youtube.com/watch?v=1o-p_LhV2pQ" target="_blank">Watch: Why is Algebra so Important?</a></li>
-                <li><a href="https://plato.stanford.edu/entries/algebra/" target="_blank">Read about the History and Philosophy of Algebra</a></li>
-            </ul>
-        </section>
     </main>
     <script src="script.js"></script>
 </body>

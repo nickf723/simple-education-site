@@ -3,34 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educational Website</title>
+    <title>Mathematics Overview</title>
     <link rel="stylesheet" href="themes/formal-sci-themes.css">
+    <link rel="stylesheet" href="themes/homepage-styles.css"> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
 </head>
 <body>
-
     <div id="sidebar-container"></div>
-
     <main class="content">
         <button id="menu-toggle">☰</button>
-        <header>
-            <h1>Mathematics</h1>
-        </header>
-        <a href="arithmetic.html" class="subdomain-card">
-        <h3>Arithmetic</h3>
-        <p></p>
-        </a>
-        <a href="algebra.html" class="subdomain-card">
-        <h3>Algebra</h3>
-        <p>The study of mathematical symbols and the rules for manipulating them.</p>
-        </a>
-        <a href="geometry.html" class="subdomain-card">
-        <h3>Geometry</h3>
-        <p></p>
-        </a>
-        <a href="calculus.html" class="subdomain-card">
-        <h3>Calculus</h3>
-        <p></p>
-        </a>
+
+        <article class="topic-overview">
+            <h1>Mathematics: The Language of the Universe</h1>
+            <p>Mathematics is the study of topics such as quantity, structure, space, and change. It provides the tools and language for science, engineering, and finance. Explore the foundational branches below.</p>
+        </article>
+        
+        <section class="domain-grid">
+            <div class="domain-card">
+                <h2>-- Arithmetic --</h2>
+                <p>The fundamental branch of mathematics, concerning the properties of the traditional operations on numbers: addition, subtraction, multiplication, and division.</p>
+                <a href="#" class="map-link">Explore Arithmetic</a>
+            </div>
+            
+            <div class="domain-card">
+                <h2>-- Algebra --</h2>
+                <p>The study of mathematical symbols and the rules for manipulating those symbols. It is the unifying thread of almost all of mathematics.</p>
+                <a href="algebra.html" class="map-link">Explore Algebra</a>
+            </div>
+
+            <div class="domain-card">
+                <h2>-- Geometry --</h2>
+                <p>The study of shapes, sizes, positions of figures, and the properties of space. It is one of the oldest mathematical sciences.</p>
+                <a href="#" class="map-link">Explore Geometry</a>
+            </div>
+
+            <div class="domain-card">
+                <h2>-- Calculus --</h2>
+                <p>The mathematical study of continuous change. Calculus is the language used to describe the motion of planets, the flow of fluids, and the rates of chemical reactions.</p>
+                <a href="#" class="map-link">Explore Calculus</a>
+            </div>
+        </section>
     </main>
     <script src="script.js"></script>
 </body>

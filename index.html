@@ -3,26 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educational Website</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Homepage - A Map of the Sciences</title>
+    <link rel="stylesheet" href="themes/formal-sci-themes.css">
+    <link rel="stylesheet" href="themes/homepage-styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <div id="sidebar-container"></div>
-
     <main class="content">
         <button id="menu-toggle">☰</button>
-        <header>
-            <h1>Landing</h1>
-        </header>
-        <article>
-            <h2>Topic Title</h2>
-            <p>This is where the content for your first educational article will go. You can write about anything you like to get started. The goal is to build a simple, clean, and understandable page.</p>
-            <p>Once we have this single page looking exactly how we want, we can then figure out the best way to add more pages without getting overwhelmed.</p>
+
+        <article class="topic-overview">
+            <h1>Academic Web</h1>
         </article>
+        
+        <section class="domain-grid">
+            <div class="domain-card">
+                <h2>-- Formal Sciences --</h2>
+                <p>The study of abstract logical and mathematical systems. Unlike other sciences, it is not based on empirical evidence but on pure reason and deduction.</p>
+                <div class="subdomain-container">
+                    <ul>
+                        <li><a href="mathematics.html">Mathematics</a></li>
+                        <li><a href="computer-science.html">Computer Science</a></li>
+                        <li><a href="logic.html">Logic</a></li>
+                    </ul>
+                </div>
+                <a href="formal-sciences.html" class="map-link">Explore Logic & Systems</a>
+            </div>
+            
+            <div class="domain-card">
+                <h2>-- Natural Sciences --</h2>
+                <p>The study of the natural world. This domain uses the scientific method to understand the physical and biological phenomena that govern the universe and life within it.</p>
+                <div class="subdomain-container">
+                    <ul>
+                        <li><a href="biology.html">Biology</a></li>
+                        <li><a href="chemistry.html">Chemistry</a></li>
+                        <li><a href="earth-science.html">Earth Science</a></li>
+                    </ul>
+                </div>
+                <a href="natural-sciences.html" class="map-link">Explore Nature & The Universe</a>
+            </div>
+
+            <div class="domain-card">
+                <h2>-- Social Sciences --</h2>
+                <p>The study of human society and social relationships. It uses scientific methods to investigate human behavior, from the individual mind to the dynamics of cultures.</p>
+                <div class="subdomain-container">
+                    <ul>
+                        <li><a href="psychology.html">Psychology</a></li>
+                        <li><a href="sociology.html">Sociology</a></li>
+                        <li><a href="communications.html">Communications</a></li>
+                    </ul>
+                </div>
+                <a href="social-sciences.html" class="map-link">Explore Society & Humanity</a>
+            </div>
+
+            <div class="domain-card">
+                <h2>-- Applied Sciences --</h2>
+                <p></p>
+                <div class="subdomain-container">
+                    <ul>
+                        <li><a href="engineering.html">Engineering</a></li>
+                        <li><a href="technology.html">Technology</a></li>
+                        <li><a href="agriculture.html">Agriculture</a></li>
+                    </ul>
+                </div>
+                <a href="applied-sciences.html" class="map-link">Explore Technology & Invention</a>
+            </div>
+
+            <div class="domain-card">
+                <h2>Humanities</h2>
+                <p></p>
+                <div class="subdomain-container">
+                    <ul>
+                        <li><a href="history.html">History</a></li>
+                        <li><a href="music.html">Music</a></li>
+                        <li><a href="philosophy.html">Logic</a></li>
+                    </ul>
+                </div>
+                <a href="humanities.html" class="map-link">Explore Arts & History</a>
+            </div>
+        </section>
+
     </main>
     <script src="script.js"></script>
 </body>

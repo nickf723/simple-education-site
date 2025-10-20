@@ -1,0 +1,110 @@
+/* themes/homepage-styles.css */
+
+:root {
+    /* --- Base Color Palette --- */
+    --primary-bg: #121212;
+    --secondary-bg: #1e1e1e;
+    --borders-low-contrast: #333;
+    --text-color: #d4d4d4;
+    --text-muted: #888;
+    --accent-color: #0056b3;
+    --accent-color2: #3000b3;
+    --accent-color-hover: #ffffff;
+}
+
+.domain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.domain-card {
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--borders-low-contrast);
+    border-radius: 8px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.domain-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.domain-card h2 {
+    margin-top: 0;
+    color: var(--accent-color); /* A nice blue for titles */
+}
+
+.domain-card p {
+    flex-grow: 1; /* Pushes the link to the bottom */
+    line-height: 1.6;
+}
+
+.map-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.map-link:hover {
+    background-color: var(--accent-color2);
+}
+
+/* Add these rules to homepage-styles.css */
+.subdomain-container {
+    margin-top: 15px;
+}
+
+.subdomain-toggle {
+    background: var(--text-muted);
+    border: 1px solid var(--borders-low-contrast);
+    width: 100%;
+    padding: 8px;
+    cursor: pointer;
+    text-align: left;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.subdomain-toggle:hover {
+    background: var(--accent-color2);
+}
+
+.subdomain-toggle.active {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.subdomain-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+}
+
+.subdomain-list ul {
+    list-style-type: none;
+    padding: 10px 15px;
+    margin: 0;
+}
+
+.subdomain-list li a {
+    text-decoration: none;
+    color: #0056b3;
+}

@@ -13,6 +13,7 @@ function initializePage() {
             activateCurrentMenuItem();
             initializeMenuToggle();
             initializeCollapsibleMenu();
+            initializeHomepageCollapsibles();
         })
         .catch(error => console.error("Sidebar loading error:", error))
         .finally(() => {
@@ -81,4 +82,19 @@ function initializeCollapsibleMenu() {
             }
         });
     });
+
+    function initializeHomepageCollapsibles() {
+    const toggles = document.querySelectorAll('.subdomain-toggle');
+    toggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('active');
+            const list = toggle.nextElementSibling;
+            if (list.style.maxHeight) {
+                list.style.maxHeight = null;
+            } else {
+                list.style.maxHeight = list.scrollHeight + "px";
+            }
+        });
+    });
+}
 }
