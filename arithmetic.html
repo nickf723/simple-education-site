@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Foundations</title>
+    <link rel="stylesheet" href="themes/formal-sci-themes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+</head>
+<body>
+    <div id="sidebar-container"></div>
+    <main class="content">
+        <button id="menu-toggle">&#9776;</button>
+
+        <article class="topic-overview">
+            <h1>Arithmetic: Building Blocks of Mathematics</h1>
+            <p>Arithmetic provides the language for counting, measuring, and comparing quantities. It introduces the structure of numbers, the rules for combining them, and the sense-making skills required for problem solving. Use the sections below to navigate the major themes.</p>
+            <ul class="learning-objectives">
+                <li>Understand the different kinds of numbers and how they relate to one another.</li>
+                <li>Master the four core operations and their properties.</li>
+                <li>Develop number sense through estimation, mental math, and reasoning strategies.</li>
+            </ul>
+        </article>
+
+        <section class="topic-article" id="number-systems">
+            <h2>Number Systems &amp; Representations</h2>
+            <p>Number systems classify the kinds of quantities we work with. Each system extends the previous one by solving a new type of problem. For example, negative numbers allow us to describe debts, while rational numbers express ratios and fractions.</p>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Counting &amp; Natural Numbers</h3>
+                    <p>Start with $1, 2, 3, \dots$ for counting tangible objects. Zero, $0$, is often included to represent nothing.</p>
+                    <ul>
+                        <li>Sequences and skip counting</li>
+                        <li>Place value in base 10</li>
+                        <li>Reading, writing, and comparing numbers</li>
+                    </ul>
+                </div>
+                <div class="concept-card">
+                    <h3>Integers &amp; Rational Numbers</h3>
+                    <p>Integers include negatives ($\dots, -2, -1, 0, 1, 2, \dots$). Rational numbers express ratios such as $\tfrac{3}{4}$ or repeating decimals like $0.125$.</p>
+                    <ul>
+                        <li>Absolute value and opposites</li>
+                        <li>Fraction and decimal equivalence</li>
+                        <li>Number line representations</li>
+                    </ul>
+                </div>
+                <div class="concept-card">
+                    <h3>Beyond the Basics</h3>
+                    <p>Real numbers cover every point on the number line, including irrationals like $\sqrt{2}$. Complex numbers introduce the unit $i$ to solve equations such as $x^2 + 1 = 0$.</p>
+                    <ul>
+                        <li>Estimating square roots</li>
+                        <li>Scientific notation</li>
+                        <li>Complex plane essentials</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="applet-ideas">
+                <h3>Applet Ideas</h3>
+                <div class="applet-placeholder">
+                    <h4>Number Line Explorer</h4>
+                    <p>Allow learners to drag and drop integers, fractions, and decimals to the correct positions on an interactive number line.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+                <div class="applet-placeholder">
+                    <h4>Base Ten Blocks Builder</h4>
+                    <p>Provide place-value tiles that can be stacked to visualize large numbers and regrouping.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article" id="operations">
+            <h2>Operations &amp; Properties</h2>
+            <p>The four arithmetic operationsâ€”addition, subtraction, multiplication, and divisionâ€”describe how quantities combine. Their properties provide shortcuts and structure for more advanced mathematics.</p>
+
+            <div class="operations-grid">
+                <article class="operation-card">
+                    <header>
+                        <h3>Addition</h3>
+                        <p class="operation-symbol">$a + b$</p>
+                    </header>
+                    <p>Combines quantities to form a sum. Addition is <strong>commutative</strong> ($a + b = b + a$) and <strong>associative</strong> ($(a + b) + c = a + (b + c)$).</p>
+                    <ul class="strategy-list">
+                        <li>Counting on &amp; making tens</li>
+                        <li>Column addition with regrouping</li>
+                        <li>Vector addition on a number line</li>
+                    </ul>
+                </article>
+                <article class="operation-card">
+                    <header>
+                        <h3>Subtraction</h3>
+                        <p class="operation-symbol">$a - b$</p>
+                    </header>
+                    <p>Measures the distance between two numbers or removes a quantity from a whole. Inverse of addition.</p>
+                    <ul class="strategy-list">
+                        <li>Think addition ("what goes with $b$ to make $a$?")</li>
+                        <li>Borrowing and decomposition</li>
+                        <li>Using absolute value for signed numbers</li>
+                    </ul>
+                </article>
+                <article class="operation-card">
+                    <header>
+                        <h3>Multiplication</h3>
+                        <p class="operation-symbol">$a \times b$</p>
+                    </header>
+                    <p>Represents repeated addition or scaling. Multiplication is commutative and associative, and distributes over addition.</p>
+                    <ul class="strategy-list">
+                        <li>Arrays and area models</li>
+                        <li>Properties of exponents</li>
+                        <li>Scaling and proportional reasoning</li>
+                    </ul>
+                </article>
+                <article class="operation-card">
+                    <header>
+                        <h3>Division</h3>
+                        <p class="operation-symbol">$a \div b$</p>
+                    </header>
+                    <p>Splits a quantity into equal groups or measures how many times one number fits into another. Division is the inverse of multiplication.</p>
+                    <ul class="strategy-list">
+                        <li>Sharing vs. measurement models</li>
+                        <li>Long division algorithms</li>
+                        <li>Remainders and decimal quotients</li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="applet-ideas">
+                <h3>Applet Ideas</h3>
+                <div class="applet-placeholder">
+                    <h4>Operation Property Sandbox</h4>
+                    <p>Let students toggle numbers and instantly see visual representations demonstrating commutative, associative, and distributive properties.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+                <div class="applet-placeholder">
+                    <h4>Division Story Builder</h4>
+                    <p>Generate real-world scenarios (sharing vs. measuring) and have learners choose the correct division model.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article" id="number-sense">
+            <h2>Number Sense &amp; Reasoning</h2>
+            <p>Number sense is the intuition that guides estimation, mental calculations, and checking whether answers are reasonable. Developing this sense equips learners to apply arithmetic flexibly in everyday situations.</p>
+
+            <div class="number-sense-layout">
+                <div class="sense-card">
+                    <h3>Estimation &amp; Rounding</h3>
+                    <p>Estimate to judge the size of answers quickly. Rounding simplifies numbers while keeping them close to the original value.</p>
+                    <div class="callout">
+                        <strong>Quick check:</strong> $48 \times 19 \approx 50 \times 20 = 1000$ (close enough to validate detailed work).
+                    </div>
+                </div>
+                <div class="sense-card">
+                    <h3>Mental Math Strategies</h3>
+                    <ul>
+                        <li>Break apart numbers (e.g., $27 + 36 = (20 + 30) + (7 + 6)$)</li>
+                        <li>Use friendly numbers (e.g., adjust to multiples of 10)</li>
+                        <li>Compensation (add then subtract a small adjustment)</li>
+                    </ul>
+                </div>
+                <div class="sense-card">
+                    <h3>Reasonableness &amp; Error Checking</h3>
+                    <p>Establish benchmarks and use inverse operations to verify results. If $a \times b = c$, check with $c \div b$.</p>
+                </div>
+            </div>
+
+            <div class="applet-ideas">
+                <h3>Applet Ideas</h3>
+                <div class="applet-placeholder">
+                    <h4>Estimation Challenge</h4>
+                    <p>Players race to choose the best estimate for a set of problems and receive feedback comparing exact and estimated answers.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+                <div class="applet-placeholder">
+                    <h4>Mental Math Coach</h4>
+                    <p>Provide step-by-step hints for mental strategies and let learners select which approach they prefer to reach the answer.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article" id="practice">
+            <h2>Practice &amp; Mastery Pathways</h2>
+            <p>Build fluency by combining conceptual understanding with procedural skill. Encourage students to revisit foundational topics whenever new challenges arise.</p>
+            <div class="practice-grid">
+                <div class="practice-card">
+                    <h3>Self-Checks</h3>
+                    <p>Create quick quizzes targeting one operation at a time. Mix in word problems to connect abstract and concrete thinking.</p>
+                </div>
+                <div class="practice-card">
+                    <h3>Spiral Review</h3>
+                    <p>Integrate previously learned skills into new lessons, such as combining fractions practice with geometry measurements.</p>
+                </div>
+                <div class="practice-card">
+                    <h3>Math Journals</h3>
+                    <p>Encourage reflections on strategies, mistakes, and breakthroughs to solidify learning and support metacognition.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <script src="applets.js"></script>`n</body>
+</html>
+
+

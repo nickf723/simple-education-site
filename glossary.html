@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossary</title>
+    <link rel="stylesheet" href="themes/formal-sci-themes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+</head>
+<body>
+    <div id="sidebar-container"></div>
+    <main class="content">
+        <button id="menu-toggle">&#9776;</button>
+
+        <article class="topic-overview">
+            <h1>Glossary</h1>
+            <p>A cross‑disciplinary glossary of core academic terms. Use search and tags to quickly filter. Terms can belong to multiple disciplines.</p>
+        </article>
+
+        <section class="topic-article" id="glossary-controls">
+            <h2>Search &amp; Filter</h2>
+            <div class="applet-controls">
+                <label>Search: <input type="text" id="glossary-search" placeholder="Search terms or definitions" style="min-width:260px"></label>
+                <button id="glossary-clear" type="button">Clear</button>
+                <span id="glossary-count"></span>
+            </div>
+            <div id="glossary-tags" class="applet-controls">
+                <span class="tag-chip" data-tag="mathematics">Mathematics</span>
+                <span class="tag-chip" data-tag="algebra">Algebra</span>
+                <span class="tag-chip" data-tag="geometry">Geometry</span>
+                <span class="tag-chip" data-tag="trigonometry">Trigonometry</span>
+                <span class="tag-chip" data-tag="calculus">Calculus</span>
+                <span class="tag-chip" data-tag="statistics">Statistics</span>
+                <span class="tag-chip" data-tag="linear-algebra">Linear Algebra</span>
+                <span class="tag-chip" data-tag="computer-science">Computer Science</span>
+                <span class="tag-chip" data-tag="logic">Logic</span>
+                <span class="tag-chip" data-tag="physics">Physics</span>
+                <span class="tag-chip" data-tag="biology">Biology</span>
+                <span class="tag-chip" data-tag="chemistry">Chemistry</span>
+                <span class="tag-chip" data-tag="humanities">Humanities</span>
+            </div>
+        </section>
+
+        <section class="topic-article" id="glossary-list">
+            <h2>Terms</h2>
+            <div class="concept-grid">
+                <!-- Mathematics -->
+                <div class="concept-card glossary-item" data-tags="mathematics" data-term="Function">
+                    <h3>Function</h3>
+                    <p>A relation that assigns each input exactly one output; often written as $f(x)$.</p>
+                    <div class="applet-controls"><span class="applet-status">Mathematics</span></div>
+                </div>
+                <div class="concept-card glossary-item" data-tags="mathematics,algebra" data-term="Variable">
+                    <h3>Variable</h3>
+                    <p>A symbol representing an unknown or changeable quantity within an expression or equation.</p>
+                    <div class="applet-controls"><span class="applet-status">Algebra</span><span class="applet-status">Mathematics</span></div>
+                </div>
+                <div class="concept-card glossary-item" data-tags="algebra" data-term="Factor">
+                    <h3>Factor</h3>
+                    <p>To rewrite an expression as a product of simpler expressions; e.g., $x^2-9=(x-3)(x+3)$.</p>
+                    <div class="applet-controls"><span class="applet-status">Algebra</span></div>
+                </div>
+                
+                <!-- Geometry / Trig -->
+                <div class="concept-card glossary-item" data-tags="geometry" data-term="Angle">
+                    <h3>Angle</h3>
+                    <p>Formed by two rays with a common endpoint; measured in degrees or radians.</p>
+                    <div class="applet-controls"><span class="applet-status">Geometry</span></div>
+                </div>
+                <div class="concept-card glossary-item" data-tags="trigonometry" data-term="Unit Circle">
+                    <h3>Unit Circle</h3>
+                    <p>The circle of radius 1 centered at the origin; defines $\sin\theta$ and $\cos\theta$ as coordinates.</p>
+                    <div class="applet-controls"><span class="applet-status">Trigonometry</span></div>
+                </div>
+                
+                <!-- Calculus -->
+                <div class="concept-card glossary-item" data-tags="calculus" data-term="Derivative">
+                    <h3>Derivative</h3>
+                    <p>Instantaneous rate of change; the slope of the tangent line to a function at a point.</p>
+                    <div class="applet-controls"><span class="applet-status">Calculus</span></div>
+                </div>
+                <div class="concept-card glossary-item" data-tags="calculus" data-term="Integral">
+                    <h3>Integral</h3>
+                    <p>Accumulation or signed area under a curve; inverse operation to differentiation (FTC links them).</p>
+                    <div class="applet-controls"><span class="applet-status">Calculus</span></div>
+                </div>
+                
+                <!-- Statistics -->
+                <div class="concept-card glossary-item" data-tags="statistics" data-term="Mean">
+                    <h3>Mean</h3>
+                    <p>Arithmetic average; sum of values divided by count.</p>
+                    <div class="applet-controls"><span class="applet-status">Statistics</span></div>
+                </div>
+                <div class="concept-card glossary-item" data-tags="statistics" data-term="Standard Deviation">
+                    <h3>Standard Deviation</h3>
+                    <p>A measure of spread around the mean; square root of variance.</p>
+                    <div class="applet-controls"><span class="applet-status">Statistics</span></div>
+                </div>
+                <div class="concept-card glossary-item" data-tags="statistics,probability" data-term="Probability">
+                    <h3>Probability</h3>
+                    <p>A number between 0 and 1 describing the likelihood of an event.</p>
+                    <div class="applet-controls"><span class="applet-status">Statistics</span></div>
+                </div>
+                
+                <!-- Linear Algebra -->
+                <div class="concept-card glossary-item" data-tags="linear-algebra" data-term="Vector">
+                    <h3>Vector</h3>
+                    <p>An element of a vector space; can be represented as an ordered list of components.</p>
+                    <div class="applet-controls"><span class="applet-status">Linear Algebra</span></div>
+                </div>
+                <div class="concept-card glossary-item" data-tags="linear-algebra" data-term="Matrix">
+                    <h3>Matrix</h3>
+                    <p>A rectangular array of numbers representing a linear transformation or system of equations.</p>
+                    <div class="applet-controls"><span class="applet-status">Linear Algebra</span></div>
+                </div>
+                
+                <!-- CS / Logic / General -->
+                <div class="concept-card glossary-item" data-tags="computer-science" data-term="Algorithm">
+                    <h3>Algorithm</h3>
+                    <p>A finite set of step-by-step instructions for solving a class of problems.</p>
+                    <div class="applet-controls"><span class="applet-status">Computer Science</span></div>
+                </div>
+                <div class="concept-card glossary-item" data-tags="logic" data-term="Proof">
+                    <h3>Proof</h3>
+                    <p>A logically sound argument establishing the truth of a statement from accepted premises.</p>
+                    <div class="applet-controls"><span class="applet-status">Logic</span></div>
+                </div>
+            </div>
+            <div id="glossary-empty" style="display:none; margin-top:10px; color: var(--text-muted)">No terms match your filters.</div>
+        </section>
+
+    </main>
+    <script src="script.js"></script>
+    <script src="applets.js"></script>
+</body>
+</html>

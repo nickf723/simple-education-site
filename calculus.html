@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus Foundations</title>
+    <link rel="stylesheet" href="themes/formal-sci-themes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+</head>
+<body>
+    <div id="sidebar-container"></div>
+    <main class="content">
+        <button id="menu-toggle">&#9776;</button>
+
+        <article class="topic-overview">
+            <h1>Calculus: Mathematics of Change</h1>
+            <p>Calculus studies how things change and accumulate. Limits formalize approach, derivatives measure instantaneous rates of change, and integrals measure accumulation such as area. The Fundamental Theorem of Calculus unifies derivatives and integrals.</p>
+            <ul class="learning-objectives">
+                <li>Build intuition for limits and continuity.</li>
+                <li>Differentiate common functions using rules of calculus.</li>
+                <li>Interpret derivatives as slopes, rates, and linear approximations.</li>
+                <li>Understand definite/indefinite integrals and accumulation.</li>
+                <li>Apply the Fundamental Theorem of Calculus to connect rates and areas.</li>
+            </ul>
+        </article>
+
+        <section class="topic-article" id="limits-continuity">
+            <h2>Limits &amp; Continuity</h2>
+            <p>Limits capture the value a function approaches near a point, even if it is not defined there. Continuity means a function has no breaks or jumps.</p>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Approach Idea</h3>
+                    <p>$\lim_{x\to a} f(x) = L$ means $f(x)$ gets arbitrarily close to $L$ as $x$ approaches $a$.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Limit Laws</h3>
+                    <p>Sum, product, quotient (when denominator nonzero), and power laws allow computation by parts.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Continuity</h3>
+                    <p>$f$ is continuous at $a$ if $\lim_{x\to a} f(x)=f(a)$. Discontinuities can be removable, jump, or infinite.</p>
+                </div>
+            </div>
+            <div class="applet-ideas">
+                <h3>Applet Ideas</h3>
+                <div class="applet-placeholder">
+                    <h4>Limit Explorer</h4>
+                    <p>Drag a point along a curve to visualize left-hand and right-hand behavior and the limiting value.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+                <div class="applet-placeholder">
+                    <h4>Continuity Classifier</h4>
+                    <p>Interactive gallery of graphs to identify removable vs. jump vs. infinite discontinuities.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article" id="derivatives">
+            <h2>Derivatives</h2>
+            <p>The derivative measures instantaneous rate of change and the slope of the tangent line.</p>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Definition</h3>
+                    <p>$f'(a)=\lim_{h\to 0} \dfrac{f(a+h)-f(a)}{h}$, when the limit exists.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Rules</h3>
+                    <p>Linearity, product/quotient rules, and chain rule. Power rule: $\dfrac{d}{dx} x^n = nx^{n-1}$.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Common Derivatives</h3>
+                    <p>$\dfrac{d}{dx}\sin x=\cos x$, $\dfrac{d}{dx}\cos x=-\sin x$, $\dfrac{d}{dx}e^x=e^x$, $\dfrac{d}{dx}\ln x=\dfrac{1}{x}$.</p>
+                </div>
+            </div>
+            <div class="knowledge-check">
+                <details>
+                    <summary>Try it: derivative of $e^{2x}$?</summary>
+                    <div class="answer">Use chain rule: $\dfrac{d}{dx}e^{2x}=2e^{2x}$.</div>
+                </details>
+            </div>
+            <div class="applet-ideas">
+                <h3>Applet Ideas</h3>
+                <div class="applet-placeholder">
+                    <h4>Tangent Slider</h4>
+                    <p>Move a point along a curve; show the tangent line and its slope as the derivative value.</p>
+                    <div id="applet-tangent"></div>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+                <div class="applet-placeholder">
+                    <h4>Derivative Graph Matcher</h4>
+                    <p>Match a function graph to its derivative by analyzing increasing/decreasing and concavity.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article" id="applications-derivatives">
+            <h2>Applications of Derivatives</h2>
+            <p>Derivatives reveal function behavior and solve real-world problems.</p>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Critical Points</h3>
+                    <p>Where $f'(x)=0$ or undefined. Use first/second derivative tests to classify extrema.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Concavity</h3>
+                    <p>$f''(x)$ indicates concavity; inflection points where concavity changes.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Optimization &amp; Rates</h3>
+                    <p>Set up objective with constraints, differentiate, and solve. Related rates connect variables via derivatives.</p>
+                </div>
+            </div>
+            <div class="applet-ideas">
+                <h3>Applet Ideas</h3>
+                <div class="applet-placeholder">
+                    <h4>Optimization Sandbox</h4>
+                    <p>Manipulate parameters (length, area, cost) and observe the maximizing/minimizing configuration.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+                <div class="applet-placeholder">
+                    <h4>Related Rates Visualizer</h4>
+                    <p>Animate linked quantities (e.g., ladder sliding) and compute rates with implicit differentiation.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article" id="integrals">
+            <h2>Integrals</h2>
+            <p>Integrals measure accumulation. Indefinite integrals form families of antiderivatives; definite integrals compute net accumulation.</p>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Riemann Sums</h3>
+                    <p>Approximate $\int_a^b f(x)\,dx$ by summing rectangles; refine partitions to improve accuracy.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Indefinite Integrals</h3>
+                    <p>Find $F$ such that $F'=f$. Notation: $\int f(x)\,dx = F(x)+C$.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Definite Integrals</h3>
+                    <p>Area/accumulation with orientation: $\int_a^b f(x)\,dx$; units are “units of $f$ times units of $x$”.</p>
+                </div>
+            </div>
+            <div class="applet-ideas">
+                <h3>Applet Ideas</h3>
+                <div class="applet-placeholder">
+                    <h4>Riemann Sum Slider</h4>
+                    <p>Change number of subintervals and left/midpoint/right choices to watch sums approach the integral.</p>
+                    <div id="applet-riemann"></div>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+                <div class="applet-placeholder">
+                    <h4>Accumulation Function</h4>
+                    <p>Plot $A(x)=\int_a^x f(t)\,dt$ to visualize how the area builds as the upper limit moves.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article" id="ftc">
+            <h2>Fundamental Theorem of Calculus</h2>
+            <p>FTC links derivatives and integrals.</p>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Part I (Accumulation)</h3>
+                    <p>If $F(x)=\int_a^x f(t)\,dt$, then $F'(x)=f(x)$ when $f$ is continuous.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Part II (Evaluation)</h3>
+                    <p>$\int_a^b f(x)\,dx = F(b)-F(a)$ for any antiderivative $F$ of $f$.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Example</h3>
+                    <p>Compute $\int_0^2 (3x^2)\,dx = x^3\big|_0^2 = 8$.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article" id="techniques">
+            <h2>Techniques (Preview)</h2>
+            <p>A taste of common tools; go deeper on a dedicated page.</p>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>$u$-Substitution</h3>
+                    <p>Reverse chain rule. Let $u=g(x)$, rewrite $\int f(g(x))g'(x)\,dx$ as $\int f(u)\,du$.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Integration by Parts</h3>
+                    <p>$\int u\,dv = uv - \int v\,du$; choose $u$ to simplify $du$.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Differential Equations</h3>
+                    <p>Separable forms: $\dfrac{dy}{dx}=k y$ has solution $y=Ce^{kx}$ (growth/decay).</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article additional-resources" id="next-steps">
+            <h2>Next Steps &amp; Practice</h2>
+            <ul>
+                <li>Prototype any of the applets above inside the placeholder containers.</li>
+                <li>Connect derivatives with linear approximation and error via tangent lines.</li>
+                <li>Relate accumulation functions to area, mass, and probability.</li>
+            </ul>
+        </section>
+
+    </main>
+    <script src="script.js"></script>
+    <script src="applets.js"></script>\n</body>
+</html>
+
+
+

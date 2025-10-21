@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics & Probability</title>
+    <link rel="stylesheet" href="themes/formal-sci-themes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+</head>
+<body>
+    <div id="sidebar-container"></div>
+    <main class="content">
+        <button id="menu-toggle">&#9776;</button>
+
+        <article class="topic-overview">
+            <h1>Statistics & Probability: Data, Uncertainty, and Inference</h1>
+            <p>Statistics turns data into insight. Describe and visualize data, model variability with probability, and draw conclusions with inference.</p>
+            <ul class="learning-objectives">
+                <li>Classify variables and design basic data collection.</li>
+                <li>Compute and interpret center, spread, and shape.</li>
+                <li>Work with core distributions (Binomial, Normal, Poisson).</li>
+                <li>Understand sampling variability and confidence intervals.</li>
+                <li>Explore association with correlation and simple regression.</li>
+            </ul>
+        </article>
+
+        <section class="topic-article" id="data-variables">
+            <h2>Data &amp; Variables</h2>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Types of Variables</h3>
+                    <p>Categorical (nominal/ordinal) vs. Quantitative (discrete/continuous).</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Data Collection</h3>
+                    <p>Samples vs. populations, bias, random sampling, observational vs. experimental studies.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Distributions</h3>
+                    <p>Describe shape, center, spread, and outliers; context matters.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article" id="descriptive-stats">
+            <h2>Descriptive Statistics</h2>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Center</h3>
+                    <p>Mean $\bar{x}$ and median (resistant to outliers).</p>
+                </div>
+                \n            <div class="applet-ideas">\n                <h3>Applet</h3>\n                <div class="applet-placeholder">\n                    <h4>Boxplot + Summary Stats</h4>\n                    <p>Generate samples, compute five-number summary, and visualize a boxplot with outliers.</p>\n                    <div id="applet-boxplot"></div>\n                    <span class="applet-status">Prompt-ready container</span>\n                </div>\n            </div>\n<div class="concept-card">
+                    <h3>Spread</h3>
+                    <p>Range, IQR, standard deviation $s$; variance $s^2$.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Visuals</h3>
+                    <p>Dotplots, histograms, boxplots; choose visuals to fit data type and story.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article" id="probability-basics">
+            <h2>Probability Basics</h2>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Events</h3>
+                    <p>Union, intersection, complement; addition rule; independence and conditional probability.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Random Variables</h3>
+                    <p>Discrete (PMF) and continuous (PDF) with expected value and variance.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Simulation</h3>
+                    <p>Use random generation to approximate probabilities and sampling distributions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article" id="core-distributions">
+            <h2>Core Distributions</h2>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Binomial</h3>
+                    <p>$X\sim \text{Bin}(n,p)$ counts successes in $n$ trials; $\mathbb{E}[X]=np$, $\operatorname{Var}(X)=np(1-p)$.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Normal</h3>
+                    <p>$X\sim \mathcal{N}(\mu,\sigma)$ models bell-shaped variability; $z=\tfrac{x-\mu}{\sigma}$ for standardization.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Poisson</h3>
+                    <p>$X\sim \text{Pois}(\lambda)$ counts rare events; mean and variance both $\lambda$.</p>
+                </div>
+            </div>
+            <div class="applet-ideas">
+                <h3>Applet Ideas</h3>
+                <div class="applet-placeholder">
+                    <h4>Distribution Explorer</h4>
+                    <p>Visualize PMF/PDF and optionally overlay a simulated histogram of samples.</p>
+                    <div id="applet-dist-explorer"></div>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article" id="inference">
+            <h2>Sampling &amp; Inference</h2>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Sampling Distributions</h3>
+                    <p>Means/proportions vary across samples; standard errors shrink as $n$ grows.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Confidence Intervals</h3>
+                    <p>Interval estimates with a confidence level (e.g., 95%); not a probability about a fixed parameter.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Hypotheses &amp; p-values</h3>
+                    <p>Set up null/alternative; p-value measures extremeness under the null.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article" id="association">
+            <h2>Association &amp; Regression</h2>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Correlation</h3>
+                    <p>Pearson’s $r$ measures linear association (scale-invariant, sensitive to outliers).</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Least Squares</h3>
+                    <p>Fit a line by minimizing squared residuals; residual plots check linear model fit.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Scatter Simulator</h3>
+                    <p>Generate data with controllable slope and noise to see how $r$ changes.</p>
+                    <div id="applet-corr"></div>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article additional-resources" id="next-steps">
+            <h2>Next Steps &amp; Practice</h2>
+            <ul>
+                <li>Build intuition with simulation for sampling variability.</li>
+                <li>Practice interpreting plots, statistics, and model diagnostics.</li>
+                <li>Connect distributions to real contexts (counts, errors, waiting times).</li>
+            </ul>
+        </section>
+
+    </main>
+    <script src="script.js"></script>
+    <script src="applets.js"></script>
+</body>
+</html>
+

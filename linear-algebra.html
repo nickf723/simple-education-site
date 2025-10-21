@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Algebra Foundations</title>
+    <link rel="stylesheet" href="themes/formal-sci-themes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+</head>
+<body>
+    <div id="sidebar-container"></div>
+    <main class="content">
+        <button id="menu-toggle">&#9776;</button>
+
+        <article class="topic-overview">
+            <h1>Linear Algebra: Vectors, Matrices, Transformations</h1>
+            <p>Linear algebra studies vector spaces and linear maps. It provides the language for geometry in higher dimensions, data transformations, and many scientific computations.</p>
+            <ul class="learning-objectives">
+                <li>Operate with vectors and interpret linear combinations and span.</li>
+                <li>Work with matrices: addition, multiplication, inverses, and rank.</li>
+                <li>Understand linear transformations, bases, and change of basis.</li>
+                <li>Compute determinants and interpret area/volume scaling.</li>
+                <li>Explore eigenvalues/eigenvectors and diagonalization basics.</li>
+            </ul>
+        </article>
+
+        <section class="topic-article" id="vectors">
+            <h2>Vectors &amp; Linear Combinations</h2>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Vectors</h3>
+                    <p>Arrows with magnitude and direction; component form $\langle a,b\rangle$; addition and scalar multiplication.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Span &amp; Basis</h3>
+                    <p>Linear combinations generate subspaces. A basis is a minimal spanning, linearly independent set.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Dot Product</h3>
+                    <p>$\mathbf{u}\cdot \mathbf{v} = \|u\|\|v\|\cos\theta$ relates angle and projection; also sum of componentwise products.</p>
+                </div>
+            </div>
+            <div class="applet-ideas">
+                <h3>Applet Ideas</h3>
+                <div class="applet-placeholder">
+                    <h4>Vector Sandbox</h4>
+                    <p>Drag vectors and see sums, scalar multiples, and linear combinations.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article" id="matrices">
+            <h2>Matrices &amp; Systems</h2>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Matrix Ops</h3>
+                    <p>Addition/multiplication, identity, transpose; solving $A\mathbf{x}=\mathbf{b}$ via elimination or inverse.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Rank &amp; Solutions</h3>
+                    <p>Rank connects to solution spaces: unique, none, or infinitely many solutions.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Transformations</h3>
+                    <p>Linear maps preserve lines and origin; represented by matrices in a chosen basis.</p>
+                </div>
+            </div>
+            <div class="applet-ideas">
+                <h3>Applet Ideas</h3>
+                <div class="applet-placeholder">
+                    <h4>Matrix Transform Viewer</h4>
+                    <p>Apply 2×2 matrices to a grid and see shear/rotation/scale effects.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article" id="det-eigen">
+            <h2>Determinants &amp; Eigen Basics</h2>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Determinant</h3>
+                    <p>Area/volume scale factor; zero determinant means non-invertible (collapses dimension).</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Eigenvalues</h3>
+                    <p>Vectors scaled by a matrix: $A\mathbf{v}=\lambda\mathbf{v}$. Diagonalization simplifies repeated application.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Applications</h3>
+                    <p>Markov chains, PCA, differential equations, and more.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article additional-resources" id="next-steps">
+            <h2>Next Steps &amp; Practice</h2>
+            <ul>
+                <li>Prototype vector and matrix applets from the placeholders.</li>
+                <li>Connect geometric interpretations (areas/volumes) with determinants.</li>
+                <li>Explore eigen decomposition in simple 2×2 cases.</li>
+            </ul>
+        </section>
+
+    </main>
+    <script src="script.js"></script>
+    <script src="applets.js"></script>
+</body>
+</html>

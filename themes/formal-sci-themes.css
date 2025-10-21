@@ -1,4 +1,4 @@
-/* --- 1. Global Styles & Variables --- */
+﻿/* --- 1. Global Styles & Variables --- */
 :root {
     /* --- Base Color Palette --- */
     --primary-bg: #121212;
@@ -248,8 +248,12 @@ a.current-page {
 
 /* ======== Additional Resources Section ======== */
 .additional-resources ul {
-    list-style-type: '🔗'; /* Fun emoji bullet point */
+    list-style-type: disc;
     padding-left: 25px;
+}
+.additional-resources li {
+    padding-left: 2px;
+    margin-bottom: 8px;
 }
 .additional-resources li {
     padding-left: 10px;
@@ -286,3 +290,215 @@ a.current-page {
 .menu-list li.active > ul.sub-menu {
     display: block;
 }
+/* ======== Arithmetic Page Enhancements ======== */
+.learning-objectives {
+    margin-top: 1.5rem;
+    padding-left: 1.5rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.learning-objectives li + li {
+    margin-top: 0.5rem;
+}
+
+.concept-grid,
+.operations-grid,
+.practice-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.concept-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.operations-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    margin-top: 1.5rem;
+}
+
+.practice-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-top: 1.5rem;
+}
+
+.concept-card,
+.operation-card,
+.practice-card,
+.sense-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--borders-low-contrast);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.concept-card h3,
+.operation-card h3,
+.practice-card h3,
+.sense-card h3 {
+    color: var(--accent-color);
+    margin-top: 0;
+}
+
+.operation-card header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+}
+
+.operation-symbol {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+}
+
+.strategy-list {
+    padding-left: 1.2rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.strategy-list li + li {
+    margin-top: 0.4rem;
+}
+
+.number-sense-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-top: 1.5rem;
+}
+
+.callout {
+    margin-top: 1rem;
+    padding: 15px;
+    border-left: 4px solid var(--accent-color);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.applet-ideas {
+    margin-top: 2rem;
+}
+
+.applet-ideas h3 {
+    margin-bottom: 1rem;
+}
+
+.applet-placeholder {
+    border: 1px dashed var(--accent-color);
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 1rem;
+    background: rgba(0, 0, 0, 0.15);
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.applet-placeholder:hover {
+    border-color: var(--accent-color-hover);
+    transform: translateY(-4px);
+}
+
+.applet-placeholder h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--accent-color);
+}
+
+.applet-placeholder p {
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.applet-status {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    background: rgba(0, 199, 177, 0.12);
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+@media (max-width: 600px) {
+    .operation-card header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+}
+
+/* ======== Applet Controls (unified) ======== */
+.applet-controls {
+    margin: 10px 0;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: baseline;
+}
+.applet-controls label {
+    margin: 0;
+}
+
+/* ======== Applet Frame (unified) ======== */
+.applet-frame {
+    width: 100%;
+    max-width: 700px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    display: block;
+}
+
+/* ======== Content Links & Accessibility ======== */
+.content a {
+    color: var(--accent-color);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.content a:hover {
+    color: var(--accent-color-hover);
+}
+.sidebar a:focus-visible, .menu-header:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* ======== Glossary Tags ======== */
+.tag-chip {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--borders-low-contrast);
+    background: rgba(255,255,255,0.06);
+    color: var(--text-color);
+    cursor: pointer;
+}
+.tag-chip + .tag-chip { margin-left: 8px; }
+.tag-chip.active {
+    background: var(--accent-color);
+    color: var(--primary-bg);
+    border-color: var(--accent-color);
+}
+
+/* ======== Page TOC & Breadcrumbs ======== */
+.page-toc {
+    background: var(--secondary-bg);
+    border: 1px solid var(--borders-low-contrast);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 16px 0 8px 0;
+}
+.page-toc h3 {
+    margin: 0 0 8px 0;
+    color: var(--accent-color);
+}
+.page-toc a { color: var(--text-color); text-decoration: none; }
+.page-toc a:hover { color: var(--accent-color); text-decoration: underline; }
+.page-toc ul { margin: 0; padding-left: 18px; }
+
+.breadcrumbs {
+    margin: 6px 0 12px 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+.breadcrumbs a { color: var(--accent-color); text-decoration: none; }
+.breadcrumbs a:hover { text-decoration: underline; }

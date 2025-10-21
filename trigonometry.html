@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trigonometry Foundations</title>
+    <link rel="stylesheet" href="themes/formal-sci-themes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+</head>
+<body>
+    <div id="sidebar-container"></div>
+    <main class="content">
+        <button id="menu-toggle">&#9776;</button>
+
+        <article class="topic-overview">
+            <h1>Trigonometry: Angles, Ratios, and Waves</h1>
+            <p>Trigonometry links geometry and algebra through angles and ratios. The unit circle unifies sine, cosine, and tangent; right-triangle definitions connect to real-world measurement; and trigonometric identities power algebraic manipulation.</p>
+            <ul class="learning-objectives">
+                <li>Measure angles in degrees and radians; convert between them.</li>
+                <li>Use the unit circle to define $\sin,\cos,\tan$ and evaluate special angles.</li>
+                <li>Apply right-triangle trigonometry to solve for lengths and angles.</li>
+                <li>Graph sine/cosine/tangent and interpret amplitude, period, and phase.</li>
+                <li>Manipulate identities (Pythagorean, angle-sum) and use inverse trig.</li>
+            </ul>
+        </article>
+
+        <section class="topic-article" id="angles-radians">
+            <h2>Angle Measure &amp; Radians</h2>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Degrees &amp; Radians</h3>
+                    <p>$180^\circ = \pi$ radians. Conversions: $x^\circ = x\tfrac{\pi}{180}$, and $x\,\text{rad} = x\tfrac{180}{\pi}{}^\circ$.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Arc Length</h3>
+                    <p>For radius $r$ and central angle $\theta$ (radians): $s = r\theta$; sector area $= \tfrac12 r^2 \theta$.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Standard Position</h3>
+                    <p>Angles measured from the positive $x$-axis; positive counterclockwise, negative clockwise.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article" id="unit-circle">
+            <h2>Unit Circle &amp; Coordinates</h2>
+            <p>On the unit circle, a point at angle $\theta$ has coordinates $(\cos\theta, \sin\theta)$. Tangent is the slope: $\tan\theta = \tfrac{\sin\theta}{\cos\theta}$ when defined.</p>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Special Angles</h3>
+                    <p>$0, \tfrac{\pi}{6}, \tfrac{\pi}{4}, \tfrac{\pi}{3}, \tfrac{\pi}{2}, \dots$ with coordinates using $\tfrac{1}{2}, \tfrac{\sqrt{2}}{2}, \tfrac{\sqrt{3}}{2}$.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Symmetry</h3>
+                    <p>Even/odd: $\cos(-\theta)=\cos\theta$, $\sin(-\theta)=-\sin\theta$; periodicity $2\pi$.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Signs by Quadrant</h3>
+                    <p>I $(+,+)$, II $(-,+)$, III $(-,-)$, IV $(+,-)$ for $(\cos\theta, \sin\theta)$.</p>
+                </div>
+            </div>
+            <div class="applet-ideas">
+                <h3>Applet Ideas</h3>
+                <div class="applet-placeholder">
+                    <h4>Unit Circle Explorer</h4>
+                    <p>Drag a point on the unit circle and read off angle, coordinates, and projections.</p>
+                    <div id="applet-unit-circle"></div>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article" id="right-triangle">
+            <h2>Right-Triangle Trigonometry</h2>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Definitions</h3>
+                    <p>For angle $\theta$: $\sin\theta=\tfrac{\text{opp}}{\text{hyp}}$, $\cos\theta=\tfrac{\text{adj}}{\text{hyp}}$, $\tan\theta=\tfrac{\text{opp}}{\text{adj}}$.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Solving Triangles</h3>
+                    <p>Given sides/angles, use trig ratios and inverse trig to find unknowns.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Applications</h3>
+                    <p>Heights &amp; distances, bearings, incline problems.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article" id="graphs">
+            <h2>Graphs of Trig Functions</h2>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Sine &amp; Cosine</h3>
+                    <p>$y=A\sin(B(x-C))+D$; amplitude $A$, period $\tfrac{2\pi}{B}$, phase shift $C$, vertical shift $D$.</p>
+                </div>
+                \n            <div class="applet-ideas">\n                <h3>Applet</h3>\n                <div class="applet-placeholder">\n                    <h4>Sine/Cosine Grapher</h4>\n                    <p>Adjust amplitude, period, phase shift, and vertical shift to see the graph change.</p>\n                    <div id="applet-trig-grapher"></div>\n                    <span class="applet-status">Prompt-ready container</span>\n                </div>\n            </div>\n<div class="concept-card">
+                    <h3>Tangent</h3>
+                    <p>Period $\pi$ with vertical asymptotes when $\cos\theta=0$.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Inverse Trig</h3>
+                    <p>Restricted ranges define $\arcsin,\arccos,\arctan$ as inverse functions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article additional-resources" id="next-steps">
+            <h2>Next Steps &amp; Practice</h2>
+            <ul>
+                <li>Practice evaluating trig functions at special angles.</li>
+                <li>Relate unit circle geometry to wave graphs and phase shifts.</li>
+                <li>Explore triangle-solving scenarios and modeling tasks.</li>
+            </ul>
+        </section>
+
+    </main>
+    <script src="script.js"></script>
+    <script src="applets.js"></script>
+</body>
+</html>
+

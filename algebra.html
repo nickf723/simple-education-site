@@ -1,9 +1,10 @@
+﻿
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Algebra Explained</title>
+    <title>Algebra Foundations</title>
     <link rel="stylesheet" href="themes/formal-sci-themes.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,52 +16,245 @@
 <body>
     <div id="sidebar-container"></div>
     <main class="content">
-        <button id="menu-toggle">☰</button>
+        <button id="menu-toggle">&#9776;</button>
 
         <article class="topic-overview">
-            <h1>Algebra: The Science of Generalization</h1>
-            <p>At its heart, algebra is the powerful art of using symbols to generalize rules and relationships. This page covers the foundational concepts of solving for unknowns and understanding the relationships between variables.</p>
+            <h1>Algebra: Patterns, Structure, and Symbols</h1>
+            <p>Algebra generalizes arithmetic with symbols so we can reason about patterns, relationships, and change. This page organizes core Algebra I ideas with concise explanations, worked examples, and prompt-ready containers for interactive applets you can build later.</p>
+            <ul class="learning-objectives">
+                <li>Understand expressions, variables, and how to simplify with structure.</li>
+                <li>Solve linear equations/inequalities and interpret solutions.</li>
+                <li>Model relationships with functions and read graphs.</li>
+                <li>Work with polynomials, factoring, and connections to roots.</li>
+                <li>Analyze systems of equations and quadratic relationships.</li>
+            </ul>
         </article>
+        <section class="topic-article" id="expressions-variables">
+            <h2>Expressions &amp; Variables</h2>
+            <p>Expressions are built from numbers, variables, and operations. Structure lets us rewrite expressions to reveal meaning or simplify evaluation.</p>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Terms and Structure</h3>
+                    <p>Identify constants, coefficients, variables, and exponents. Like terms have the same variable part (e.g., $3x$ and $-7x$).</p>
+                    <ul>
+                        <li>Like terms and combining</li>
+                        <li>Order of operations (PEMDAS)</li>
+                        <li>Evaluating with substitution</li>
+                    </ul>
+                </div>
+                <div class="concept-card">
+                    <h3>Simplifying Expressions</h3>
+                    <p>Use associative and commutative properties to regroup and reorder; apply distributive property to remove parentheses.</p>
+                    <blockquote>Example: $2x + 3 - x + 5 = (2x - x) + (3 + 5) = x + 8</blockquote>
+                </div>
+                <div class="concept-card">
+                    <h3>Distributive Property</h3>
+                    <p>$a(b+c)=ab+ac$. Also factor out common factors: $6x+9 = 3(2x+3)$ to expose structure.</p>
+                </div>
+            </div>
 
-        <section class="lesson-section">
-            <h2>Part 1: Equations & Inequalities</h2>
-            <p>This section focuses on the toolkit for solving for unknown values. An equation is like a balanced scale, and our goal is to find the value that keeps it in balance.</p>
+            <div class="applet-ideas">
+                <h3>Applet Ideas</h3>
+                <div class="applet-placeholder">
+                    <h4>Expression Builder</h4>
+                    <p>Drag tiles for variables, coefficients, and operations to build and simplify expressions; highlight like terms.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+                <div class="applet-placeholder">
+                    <h4>Distribute vs. Factor</h4>
+                    <p>Toggle between expanded and factored forms to see when each is helpful for simplification or evaluation.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+            </div>
+        </section>
+        <section class="topic-article" id="equations-inequalities">
+            <h2>Equations &amp; Inequalities</h2>
+            <p>Equations assert equality between expressions. Solve by isolating the variable while preserving balance. Inequalities compare quantities and share many of the same steps.</p>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Linear Equations</h3>
+                    <p>Use inverse operations; simplify first by combining like terms and distributing.</p>
+                    <blockquote>Example: Solve $3x-4=11$ → $3x=15$ → $x=5$</blockquote>
+                    <p>Be mindful of special cases: identities (infinitely many solutions) and contradictions (no solution).</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Inequalities</h3>
+                    <p>Solve like equations with one rule: multiplying/dividing by a negative flips the sign.</p>
+                    <blockquote>Example: $-2x > 10$ → divide by $-2$ and flip: $x < -5$</blockquote>
+                </div>
+                <div class="concept-card">
+                    <h3>Absolute Value</h3>
+                    <p>$|x|$ measures distance from 0. Solve $|x-a|=b$ as two cases: $x-a=b$ or $x-a=-b$.</p>
+                </div>
+            </div>
 
-            <h3>The Foundation: What is an Equation?</h3>
-            <p>An equation states that two expressions are equal (e.g., $x+3=5$). Our goal is to find the value of the <strong>variable</strong> (the symbol, like $x$) that makes this statement true. We do this by keeping the "scale" balanced.</p>
+            <div class="knowledge-check">
+                <details>
+                    <summary>Try it: When do you flip an inequality?</summary>
+                    <div class="answer">Whenever you multiply or divide both sides by a negative number.</div>
+                </details>
+            </div>
 
-            <h3>One-Step & Two-Step Equations</h3>
-            <p>We solve equations using <strong>inverse operations</strong> to isolate the variable. Addition undoes subtraction, and multiplication undoes division. For two-step equations, we reverse the order of operations (undoing addition/subtraction first).</p>
-            <blockquote><strong>Example (Two-Step):</strong> Solve $3x - 4 = 11$.<br>
-            1. Add 4 to both sides: $3x = 15$.<br>
-            2. Divide both sides by 3: $x = 5$.
-            </blockquote>
+            <div class="applet-ideas">
+                <h3>Applet Ideas</h3>
+                <div class="applet-placeholder">
+                    <h4>Balance-Scale Solver</h4>
+                    <p>Visualize inverse operations on a scale; add/remove equal weights on both sides to isolate the variable.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+                <div class="applet-placeholder">
+                    <h4>Inequality Line</h4>
+                    <p>Interactive number line showing solution sets with open/closed circles and arrows; include a toggle that flips the sign when multiplying by negatives.</p>
+                    <div id="applet-inequality"></div>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+            </div>
+        </section>
+        <section class="topic-article" id="functions-graphs">
+            <h2>Functions &amp; Graphs</h2>
+            <p>A function pairs each input with exactly one output. Representations include words, tables, equations, and graphs.</p>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Notation &amp; Evaluation</h3>
+                    <p>Use $f(x)$ for output at input $x$. Example: if $f(x)=x^2+2$, then $f(3)=11$.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Linear Models</h3>
+                    <p>Slope-intercept: $y=mx+b$. Rate of change $m=\dfrac{\Delta y}{\Delta x}$; intercept $b$ is the value at $x=0$.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Domains &amp; the VLT</h3>
+                    <p>Domain is allowed inputs. Vertical Line Test: a graph is a function iff every vertical line intersects once at most.</p>
+                </div>
+            </div>
 
-            <h3>Multi-Step & Special Cases</h3>
-            <p>For more complex equations, we first simplify by <strong>combining like terms</strong> or using the <strong>distributive property</strong> to remove parentheses. Sometimes, the variables will cancel out, leading to a true statement like $5=5$ (Infinite Solutions) or a false statement like $5=2$ (No Solution).</p>
+            <div class="applet-ideas">
+                <h3>Applet Ideas</h3>
+                <div class="applet-placeholder">
+                    <h4>Slope &amp; Intercept Slider</h4>
+                    <p>Drag $m$ and $b$ to see how $y=mx+b$ moves; display rate of change and intercepts dynamically.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+                <div class="applet-placeholder">
+                    <h4>VLT Tester</h4>
+                    <p>Draw a curve and apply a moving vertical line to verify function behavior and identify failures.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+            </div>
+        </section>
+        <section class="topic-article" id="polynomials-factoring">
+            <h2>Polynomials &amp; Factoring</h2>
+            <p>Polynomials are sums of terms $a_n x^n$. Operations preserve structure and factoring reveals zeros.</p>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Operations</h3>
+                    <p>Add/subtract by combining like terms; multiply using distributive property and area models.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Common Patterns</h3>
+                    <p>GCF, trinomials $x^2+bx+c$, difference of squares $a^2-b^2=(a-b)(a+b)$, perfect squares.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Roots Connection</h3>
+                    <p>Factored form reveals zeros; if $f(x)=(x-r)g(x)$ then $x=r$ is a root and $f(r)=0$.</p>
+                </div>
+            </div>
 
-            <h3>Inequalities</h3>
-            <p>Inequalities (using $<, >$) are solved just like equations, with one golden rule: <strong>when you multiply or divide both sides by a negative number, you must flip the inequality sign.</strong></p>
-            <blockquote><strong>Example:</strong> Solve $-2x > 10$.<br>
-            Divide by -2 and flip the sign: $x < -5$.
-            </blockquote>
+            <div class="applet-ideas">
+                <h3>Applet Ideas</h3>
+                <div class="applet-placeholder">
+                    <h4>Factoring Tiles</h4>
+                    <p>Drag algebra tiles to build rectangles for trinomials and observe the factors as side lengths.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+                <div class="applet-placeholder">
+                    <h4>Roots ↔ Graph</h4>
+                    <p>Adjust factors to see zeros move on the x-axis and how multiplicity affects the graph’s touch/cross behavior.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+            </div>
         </section>
 
-        <section class="lesson-section">
-            <h2>Part 2: Functions</h2>
-            <p>Functions describe a specific relationship between an input and an output. For every one input, there is exactly one output.</p>
+        <section class="topic-article" id="systems">
+            <h2>Systems of Equations</h2>
+            <p>Find the point(s) where equations are simultaneously true. Solutions represent intersections when graphed.</p>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Methods</h3>
+                    <p>Graphing (visual), substitution (replace a variable), elimination (add/subtract equations to cancel terms).</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Solution Types</h3>
+                    <p>One solution (intersect), none (parallel), infinitely many (same line). Check by comparing slopes/intercepts.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Applications</h3>
+                    <p>Mixtures, motion, pricing—translate contexts into two equations in two variables.</p>
+                </div>
+            </div>
 
-            <h3>What is a Function?</h3>
-            <p>Think of a function as a machine. You put an input (like a number) in, the machine follows a rule, and it produces a single output. We can use the <strong>Vertical Line Test</strong> on a graph to see if it's a function: if a vertical line touches the graph more than once, it's not a function.</p>
+            <div class="applet-ideas">
+                <h3>Applet Ideas</h3>
+                <div class="applet-placeholder">
+                    <h4>System Solver</h4>
+                    <p>Plot both lines with draggable slopes/intercepts; show intersection coordinates and classify the solution.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+                <div class="applet-placeholder">
+                    <h4>Elimination Visualizer</h4>
+                    <p>Scale and add equations step-by-step; highlight how coefficients line up to eliminate variables.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+            </div>
+        </section>
+        <section class="topic-article" id="quadratics">
+            <h2>Quadratic Relationships</h2>
+            <p>Quadratics model curved growth/decay. Their graphs are parabolas with symmetry and a vertex.</p>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Forms</h3>
+                    <p>Standard $ax^2+bx+c$, factored $a(x-r_1)(x-r_2)$, vertex $a(x-h)^2+k$. Each highlights different features.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Features</h3>
+                    <p>Vertex $(h,k)$, axis of symmetry $x=h$, intercepts from factored form, opening from sign of $a$.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Solving</h3>
+                    <p>Factor when possible; otherwise complete the square or use quadratic formula: $x=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$.</p>
+                </div>
+            </div>
 
-            <h3>Function Notation</h3>
-            <p>We use the notation $f(x)$ (read "f of x") to represent a function. This is a replacement for 'y' that makes the input-output relationship clear.</p>
-            <blockquote><strong>Example:</strong> If $f(x) = x^2 + 2$, find $f(3)$.<br>
-            Replace x with 3: $f(3) = (3)^2 + 2 = 9 + 2 = 11$.
-            </blockquote>
+            <div class="applet-ideas">
+                <h3>Applet Ideas</h3>
+                <div class="applet-placeholder">
+                    <h4>Parabola Explorer</h4>
+                    <p>Sliders for $a,h,k$ to see vertex form transformations and how parameters affect width, direction, and position.</p>
+                    <div id="applet-parabola"></div>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+                <div class="applet-placeholder">
+                    <h4>Quadratic Roots</h4>
+                    <p>Relate discriminant to number of solutions; animate how changing $a,b,c$ moves the graph and roots.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article additional-resources" id="next-steps">
+            <h2>Next Steps &amp; Practice</h2>
+            <ul>
+                <li>Create applets in the labeled containers above.</li>
+                <li>Blend symbolic practice with graph interpretation for deeper transfer.</li>
+                <li>Connect factoring with intercepts and solution methods across forms.</li>
+            </ul>
         </section>
 
     </main>
     <script src="script.js"></script>
-</body>
+    <script src="applets.js"></script>`n</body>
 </html>
+
+
+
+

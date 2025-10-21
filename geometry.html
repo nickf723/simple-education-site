@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Foundations</title>
+    <link rel="stylesheet" href="themes/formal-sci-themes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+</head>
+<body>
+    <div id="sidebar-container"></div>
+    <main class="content">
+        <button id="menu-toggle">&#9776;</button>
+
+        <article class="topic-overview">
+            <h1>Geometry: Shapes, Space, and Structure</h1>
+            <p>Geometry studies properties of shapes and space. From angles and triangles to transformations and coordinates, it connects visual reasoning with algebraic descriptions.</p>
+            <ul class="learning-objectives">
+                <li>Work fluently with points, lines, angles, and constructions.</li>
+                <li>Prove and use triangle congruence/similarity criteria.</li>
+                <li>Analyze polygons and circles, including length/area relationships.</li>
+                <li>Model with coordinates: distance, midpoint, slope, and equations.</li>
+                <li>Understand transformations, symmetry, and geometric invariants.</li>
+            </ul>
+        </article>
+
+        <section class="topic-article" id="basics">
+            <h2>Points, Lines, &amp; Angles</h2>
+            <p>Foundations: undefined terms (point, line, plane), segments/rays, and angle relationships.</p>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Angles</h3>
+                    <p>Complementary (sum $90^\circ$), supplementary (sum $180^\circ$), vertical angles (equal), linear pairs (supplementary).</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Parallel Lines</h3>
+                    <p>With a transversal: corresponding and alternate interior angles are congruent; interior angles on same side are supplementary.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Constructions</h3>
+                    <p>Classical compass-and-straightedge: bisect segments/angles, copy segments/angles, perpendicular/parallel lines.</p>
+                </div>
+            </div>
+            <div class="applet-ideas">
+                <h3>Applet Ideas</h3>
+                <div class="applet-placeholder">
+                    <h4>Angle Explorer</h4>
+                    <p>Drag rays to form angles and visualize complementary, supplementary, and vertical relationships.</p>
+                    <div id="applet-angle"></div>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+                <div class="applet-placeholder">
+                    <h4>Parallel Lines Lab</h4>
+                    <p>Move a transversal across parallel lines and highlight corresponding/alternate interior angles.</p>
+                    <div id="applet-parallel"></div>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article" id="triangles">
+            <h2>Triangles</h2>
+            <p>Triangles are rigid—congruence criteria and similarity ratios power much of planar geometry.</p>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Congruence</h3>
+                    <p>Use SSS, SAS, ASA, AAS; HL for right triangles. Base angles of isosceles triangles are congruent.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Similarity</h3>
+                    <p>AA/AAA establishes similarity; side ratios match, corresponding angles equal. Scale factors relate perimeters, areas, and volumes.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Right Triangles</h3>
+                    <p>Pythagorean Theorem: $a^2+b^2=c^2$. Special triangles (30-60-90, 45-45-90) have fixed side ratios.</p>
+                </div>
+            </div>
+            <div class="applet-ideas">
+                <h3>Applet Ideas</h3>
+                <div class="applet-placeholder">
+                    <h4>Congruence Builder</h4>
+                    <p>Assemble triangles from sides/angles and test whether SSS/SAS/ASA/AAS/HL applies.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+                <div class="applet-placeholder">
+                    <h4>Pythagorean Explorer</h4>
+                    <p>Drag legs of a right triangle and compare areas on squares to see $a^2+b^2=c^2$.
+                    </p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article" id="polygons">
+            <h2>Quadrilaterals &amp; Polygons</h2>
+            <p>Classify by side/angle properties; use interior/exterior angle sums and symmetry.</p>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Angle Sums</h3>
+                    <p>Interior angle sum of an $n$-gon: $(n-2)\cdot 180^\circ$. Exterior angles sum to $360^\circ$.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Special Quads</h3>
+                    <p>Parallelogram, rectangle, rhombus, square, kite, trapezoid—know defining properties and implications.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Regular Polygons</h3>
+                    <p>Equal sides/angles; central angles and apothem relate to perimeter and area.</p>
+                </div>
+            </div>
+            <div class="applet-ideas">
+                <h3>Applet Ideas</h3>
+                <div class="applet-placeholder">
+                    <h4>Polygon Angle Lab</h4>
+                    <p>Choose $n$ and visualize interior/exterior angle sums; toggle regular vs. irregular.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+                <div class="applet-placeholder">
+                    <h4>Quad Classifier</h4>
+                    <p>Drag vertices and watch properties (parallel, equal sides, right angles) classify the quadrilateral.
+                    </p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article" id="circles">
+            <h2>Circles</h2>
+            <p>Central and inscribed angles, arcs, chords, tangents, and sector area create a rich geometry.</p>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Angles &amp; Arcs</h3>
+                    <p>Inscribed angle equals half its intercepted arc; central angle equals its arc measure.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Chords &amp; Tangents</h3>
+                    <p>Perpendicular from center bisects a chord; tangent is perpendicular to radius at point of tangency.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Length &amp; Area</h3>
+                    <p>Arc length $= r\theta$ (in radians); sector area $= \tfrac{1}{2} r^2 \theta$.</p>
+                </div>
+            </div>
+            <div class="applet-ideas">
+                <h3>Applet Ideas</h3>
+                <div class="applet-placeholder">
+                    <h4>Inscribed Angle Explorer</h4>
+                    <p>Move points on a circle and compare inscribed vs. central angles and intercepted arcs.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+                <div class="applet-placeholder">
+                    <h4>Tangent/Chord Lab</h4>
+                    <p>Construct tangents/chords and test perpendicular and bisector properties dynamically.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article" id="coordinate">
+            <h2>Coordinate Geometry</h2>
+            <p>Connect algebra and geometry with coordinates to prove and compute.</p>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Distance &amp; Midpoint</h3>
+                    <p>$d=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$, midpoint $\left(\tfrac{x_1+x_2}{2},\tfrac{y_1+y_2}{2}\right)$.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Slope &amp; Lines</h3>
+                    <p>$m=\dfrac{\Delta y}{\Delta x}$. Point-slope $y-y_1=m(x-x_1)$; slope-intercept $y=mx+b$.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Proofs with Coordinates</h3>
+                    <p>Show parallel/perpendicular, congruence, or midpoint/centroid properties using formulas.</p>
+                </div>
+            </div>
+            <div class="applet-ideas">
+                <h3>Applet Ideas</h3>
+                <div class="applet-placeholder">
+                    <h4>Slope Tool</h4>
+                    <p>Place two points and see slope, line equation, and dynamic graph.</p>
+                    <div id="applet-slope"></div>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+                <div class="applet-placeholder">
+                    <h4>Distance/Midpoint Tool</h4>
+                    <p>Drag endpoints and compute distance and midpoint with live updates.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article" id="transformations">
+            <h2>Transformations &amp; Symmetry</h2>
+            <p>Translations, rotations, reflections, and dilations preserve specific properties and reveal invariants.</p>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Isometries</h3>
+                    <p>Rigid motions (translation, rotation, reflection) preserve length and angle measure; compose to map figures.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Dilations</h3>
+                    <p>Scale by factor $k$ from a center; preserve angle, multiply lengths by $k$, areas by $k^2$.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Symmetry</h3>
+                    <p>Line and rotational symmetry characterize figures; symmetry groups describe all symmetries of a figure.</p>
+                </div>
+            </div>
+            <div class="applet-ideas">
+                <h3>Applet Ideas</h3>
+                <div class="applet-placeholder">
+                    <h4>Transformations Playground</h4>
+                    <p>Apply and compose transformations; visualize invariants like distance and angle measure.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+                <div class="applet-placeholder">
+                    <h4>Symmetry Finder</h4>
+                    <p>Draw or import shapes and detect/refine lines and centers of symmetry.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article" id="measurement">
+            <h2>Measurement &amp; Similarity</h2>
+            <p>Relate perimeter, area, and volume formulas; connect similarity to scaling laws.</p>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Area &amp; Perimeter</h3>
+                    <p>Rectangles $A=lw$; triangles $A=\tfrac12 bh$; polygons via decomposition or apothem.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Surface Area &amp; Volume</h3>
+                    <p>Prisms/cylinders: $V=Bh$; pyramids/cones: $V=\tfrac13 Bh$; sphere: $V=\tfrac43\pi r^3$.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Similarity &amp; Scale</h3>
+                    <p>Scale factor $k$ multiplies lengths by $k$, areas by $k^2$, volumes by $k^3$.</p>
+                </div>
+            </div>
+            <div class="applet-ideas">
+                <h3>Applet Ideas</h3>
+                <div class="applet-placeholder">
+                    <h4>Similarity Lab</h4>
+                    <p>Scale shapes and track changes in perimeter, area, and volume across $k$.</p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+                <div class="applet-placeholder">
+                    <h4>3D Nets &amp; SA/V</h4>
+                    <p>Unfold solids into nets; compute and compare surface area and volume.
+                    </p>
+                    <span class="applet-status">Prompt-ready container</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article additional-resources" id="next-steps">
+            <h2>Next Steps &amp; Practice</h2>
+            <ul>
+                <li>Prototype any of the applets above inside the placeholder containers.</li>
+                <li>Connect coordinate proofs to classical theorems (e.g., midsegment, centroid).</li>
+                <li>Bridge geometry and algebra with transformations and symmetry.
+                </li>
+            </ul>
+        </section>
+
+    </main>
+    <script src="script.js"></script>
+    <script src="applets.js"></script>\n</body>
+</html>
+
+
+
+
