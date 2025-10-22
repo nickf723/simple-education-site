@@ -1,15 +1,10 @@
-/* themes/homepage-styles.css */
-
 :root {
-    /* --- Base Color Palette --- */
-    --primary-bg: #121212;
-    --secondary-bg: #1e1e1e;
-    --borders-low-contrast: #333;
-    --text-color: #d4d4d4;
-    --text-muted: #888;
-    --accent-color: #0056b3;
-    --accent-color2: #3000b3;
-    --accent-color-hover: #ffffff;
+    --formal-sci-color: #e040fb;
+    --natural-sci-color: #00e676;
+    --social-sci-color: #40c4ff;
+    --applied-sci-color: #ffab40;
+    --humanities-color: #ff5252;
+    --interdisciplinary-color: #f48fb1;
 }
 
 .domain-grid {
@@ -22,95 +17,107 @@
 .domain-card {
     background-color: var(--secondary-bg);
     border: 1px solid var(--borders-low-contrast);
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 25px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-top: 4px solid transparent; /* Placeholder for the color accent */
 }
 
 .domain-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Color accents for each domain */
+.domain-card.formal-sci { border-top-color: var(--formal-sci-color); }
+.domain-card.natural-sci { border-top-color: var(--natural-sci-color); }
+.domain-card.social-sci { border-top-color: var(--social-sci-color); }
+.domain-card.applied-sci { border-top-color: var(--applied-sci-color); }
+.domain-card.humanities { border-top-color: var(--humanities-color); }
+.domain-card.interdisciplinary { border-top-color: var(--interdisciplinary-color); }
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card-icon {
+    font-size: 2rem;
+    line-height: 1;
 }
 
 .domain-card h2 {
-    margin-top: 0;
-    color: var(--accent-color); /* A nice blue for titles */
+    margin: 0;
+    border: none;
+    padding: 0;
+    font-size: 1.5rem;
 }
+/* Match title color to accent border */
+.formal-sci h2 { color: var(--formal-sci-color); }
+.natural-sci h2 { color: var(--natural-sci-color); }
+.social-sci h2 { color: var(--social-sci-color); }
+.applied-sci h2 { color: var(--applied-sci-color); }
+.humanities h2 { color: var(--humanities-color); }
+.interdisciplinary h2 { color: var(--interdisciplinary-color); }
 
 .domain-card p {
-    flex-grow: 1; /* Pushes the link to the bottom */
-    line-height: 1.6;
+    flex-grow: 1;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
 }
 
-.map-link {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 15px;
-    background-color: var(--accent-color);
-    color: var(--text-color);
+.subdomain-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.subdomain-links a {
     text-decoration: none;
-    border-radius: 5px;
-    text-align: center;
-    font-weight: bold;
+    color: var(--text-color);
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    border: 1px solid var(--borders-low-contrast);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.subdomain-links a:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+    border-color: var(--accent-color);
+}
+
+/* ----- NEW: Glossary Page Styles ----- */
+.tag-chip {
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    user-select: none; /* Prevents text selection on click */
+}
+
+/* Style for a tag when it's selected */
+.tag-chip.active {
+    background-color: var(--secondary-accent);
+    color: #ffffff;
+    border-color: var(--secondary-accent);
+}
+
+#glossary-controls button {
+    padding: 8px 16px;
+    border: 1px solid var(--borders-low-contrast);
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+    border-radius: 6px;
+    cursor: pointer;
     transition: background-color 0.2s ease;
 }
 
-.map-link:hover {
-    background-color: var(--accent-color2);
-}
-
-/* Add these rules to homepage-styles.css */
-.subdomain-container {
-    margin-top: 15px;
-}
-
-.subdomain-toggle {
-    background: var(--text-muted);
-    border: 1px solid var(--borders-low-contrast);
-    width: 100%;
-    padding: 8px;
-    cursor: pointer;
-    text-align: left;
-    border-radius: 4px;
-    font-family: inherit;
-    font-size: 0.9rem;
-    transition: background-color 0.2s;
-}
-
-.subdomain-toggle:hover {
-    background: var(--accent-color2);
-}
-
-.subdomain-toggle.active {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-.subdomain-list {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    border: 1px solid #ddd;
-    border-top: none;
-    border-radius: 0 0 4px 4px;
-}
-
-.subdomain-list ul {
-    list-style-type: none;
-    padding: 10px 15px;
-    margin: 0;
-}
-
-.subdomain-list li a {
-    text-decoration: none;
-    color: #0056b3;
-}
-/* Accessibility polish */
-.map-link:focus-visible,
-.subdomain-toggle:focus-visible {
-    outline: 2px solid var(--accent-color);
-    outline-offset: 2px;
+#glossary-controls button:hover {
+    background-color: var(--accent-color);
+    color: #fff;
 }

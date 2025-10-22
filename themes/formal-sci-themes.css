@@ -1,11 +1,15 @@
 :root {
-    --primary-bg: #121212;
-    --secondary-bg: #1e1e1e;
-    --borders-low-contrast: #333;
-    --text-color: #e0e0e0;
-    --text-muted: #888;
-    --accent-color: #c700a6;
+    --primary-bg: #1a1a1a; /* Slightly lighter dark background */
+    --secondary-bg: #242424; /* Lighter secondary background */
+    --borders-low-contrast: #444;
+    --text-color: #e8e8e8;
+    --text-muted: #9e9e9e;
+    --accent-color: #e040fb; /* A vibrant magenta/purple */
     --accent-color-hover: #ffffff;
+    --secondary-accent: #00b8d4; /* A secondary cyan for highlights */
+    --param-a-color: #ffab40; /* Orange */
+    --param-h-color: #40c4ff; /* Blue */
+    --param-k-color: #00e676; /* Green */
 }
 
 body {
@@ -20,30 +24,34 @@ body {
 
 /* ----- Layout Containers ----- */
 #sidebar-container {
-    width: 220px;
+    width: 240px; /* Slightly wider sidebar */
     padding: 20px;
     background-color: var(--secondary-bg);
+    border-right: 1px solid var(--borders-low-contrast);
 }
 
 .content {
     flex: 1 1 auto;
     padding: 40px;
+    max-width: 900px; /* Max width for better readability on large screens */
+    margin: 0 auto;
 }
 
 /* ----- Sidebar Navigation ----- */
-.sidebar h3 {
+#sidebar h3 {
     padding-bottom: 10px;
     color: var(--text-color);
     border-bottom: 1px solid var(--borders-low-contrast);
+    font-weight: 700;
 }
 
-.sidebar ul {
+#sidebar ul {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
-.sidebar a {
+#sidebar a {
     display: block;
     padding: 8px;
     border-radius: 4px;
@@ -52,14 +60,15 @@ body {
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.sidebar a:hover {
+#sidebar a:hover {
     background-color: var(--accent-color);
-    color: var(--primary-bg);
+    color: #ffffff;
 }
 
 a.current-page {
     color: var(--accent-color);
     font-weight: 600;
+    background-color: rgba(224, 64, 251, 0.1); /* Subtle highlight */
 }
 
 .menu-header {
@@ -72,16 +81,20 @@ a.current-page {
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.menu-header:hover,
+.menu-header:hover {
+    background-color: var(--accent-color);
+}
+
 .menu-header:hover .menu-title,
 .menu-header:hover .submenu-toggle {
-    background-color: var(--accent-color);
-    color: var(--primary-bg);
+    color: #ffffff;
 }
+
 
 .menu-title {
     flex: 1 1 auto;
     color: var(--text-muted);
+    font-weight: 700;
 }
 
 .submenu-toggle {
@@ -92,6 +105,8 @@ a.current-page {
 .menu-list ul.sub-menu {
     display: none;
     padding-left: 20px;
+    border-left: 1px solid var(--borders-low-contrast);
+    margin-left: 8px;
 }
 
 .menu-list li.active > ul.sub-menu {
@@ -100,10 +115,18 @@ a.current-page {
 
 /* ----- Content Shell ----- */
 .content h1,
-.content h2 {
+.content h2,
+.content h3 {
     padding-bottom: 10px;
     border-bottom: 1px solid var(--borders-low-contrast);
     color: var(--text-color);
+    font-weight: 700;
+}
+
+.content h2 {
+    color: var(--accent-color);
+    margin-top: 2.5rem;
+    border-bottom-style: dashed;
 }
 
 .topic-overview p {
@@ -117,19 +140,18 @@ a.current-page {
     border-left: 5px solid var(--accent-color);
     border-radius: 10px;
     background-color: var(--secondary-bg);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
-}
-
-.topic-article h2 {
-    margin-top: 0;
-    border-bottom: none;
-    color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .learning-objectives {
     margin-top: 1.5rem;
     padding-left: 1.5rem;
     color: var(--text-muted);
+    list-style-type: '✓';
+}
+
+.learning-objectives li {
+    padding-left: 10px;
 }
 
 .learning-objectives li + li {
@@ -137,108 +159,46 @@ a.current-page {
 }
 
 /* ----- Card Grids ----- */
-.concept-grid,
-.operations-grid,
-.practice-grid,
-.number-sense-layout {
+.concept-grid {
     display: grid;
     gap: 20px;
-}
-
-.concept-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
-.operations-grid {
-    margin-top: 1.5rem;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
-.practice-grid {
-    margin-top: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-.number-sense-layout {
-    margin-top: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-}
-
-.concept-card,
-.operation-card,
-.practice-card,
-.sense-card,
-.subdomain-card {
+.concept-card {
     padding: 20px;
     border: 1px solid var(--borders-low-contrast);
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.04);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.03);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.subdomain-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.2s ease, border-color 0.2s ease;
+.concept-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.subdomain-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent-color);
-}
-
-.concept-card h3,
-.operation-card h3,
-.practice-card h3,
-.sense-card h3,
-.subdomain-card h3 {
+.concept-card h3 {
     margin-top: 0;
-    color: var(--accent-color);
+    color: var(--secondary-accent);
+    border: none;
 }
 
-.subdomain-card p,
-.strategy-list,
-.applet-placeholder p {
-    color: var(--text-muted);
+/* ----- NEW: Applet Section Styling ----- */
+/* This creates a dedicated container for applets inside a topic article. */
+.applet-section {
+    margin-top: 2.5rem;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--primary-bg); /* Darker background to stand out */
+    border: 1px solid var(--borders-low-contrast);
 }
 
-.operation-card header {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    margin-bottom: 0.5rem;
-}
-
-.operation-symbol {
-    font-size: 1.5rem;
-    color: var(--text-muted);
-}
-
-.strategy-list {
-    padding-left: 1.2rem;
-}
-
-.strategy-list li + li {
-    margin-top: 0.4rem;
-}
-
-.callout {
-    margin-top: 1rem;
-    padding: 15px;
-    border-left: 4px solid var(--accent-color);
-    background: rgba(255, 255, 255, 0.05);
-}
-
-/* ----- Applet Shells ----- */
-.applet-ideas {
-    margin-top: 2rem;
-}
-
-.applet-ideas h3 {
-    margin-bottom: 1rem;
+.applet-section h3 {
+    margin-top: 0;
+    border-bottom: 1px solid var(--borders-low-contrast);
+    color: var(--text-color);
 }
 
 .applet-placeholder {
@@ -247,27 +207,19 @@ a.current-page {
     gap: 0.75rem;
     padding: 20px;
     margin-bottom: 1.25rem;
-    border: 1px dashed var(--accent-color);
+    border: 1px dashed var(--secondary-accent);
     border-radius: 14px;
-    background: rgba(0, 0, 0, 0.18);
+    background: rgba(0, 0, 0, 0.2);
     transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
 .applet-placeholder:hover {
     border-color: var(--accent-color-hover);
-    transform: translateY(-4px);
 }
 
-.applet-header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.applet-header h4 {
+.applet-placeholder h4 {
     margin: 0;
-    color: var(--accent-color);
+    color: var(--secondary-accent);
 }
 
 .applet-status {
@@ -275,170 +227,58 @@ a.current-page {
     align-items: center;
     padding: 4px 12px;
     border-radius: 999px;
-    background: rgba(0, 199, 177, 0.12);
-    color: var(--accent-color);
+    background: rgba(0, 184, 212, 0.15); /* Matched to secondary accent */
+    color: var(--secondary-accent);
     font-size: 0.85rem;
     font-weight: 600;
-    letter-spacing: 0.01em;
 }
 
-
-.applet-slot {
-    position: relative;
+/* Add this to your formal-sci-themes.css file */
+.applet-controls {
     display: flex;
-    align-items: stretch;
-    justify-content: center;
-    min-height: 180px;
-    padding: 16px;
-    border: 1px solid var(--borders-low-contrast);
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.02);
-    overflow: hidden;
-    pointer-events: auto;
-}
-
-.applet-slot > * {
-    flex: 1 1 auto;
-}
-
-.applet-slot iframe,
-.applet-slot canvas,
-.applet-slot .interactive-root {
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 8px;
-    background: transparent;
-    pointer-events: auto;
-}
-
-.applet-note {
-    margin: auto;
-    text-align: center;
-    font-size: 0.9rem;
-    color: var(--text-muted);
-}
-
-/* ----- Math Styling ----- */
-.math-chip {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.1rem 0.6rem;
-    margin: 0 0.15rem;
-    border: 1px solid var(--borders-low-contrast);
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.06);
-    white-space: nowrap;
-    font-size: 0.95em;
-}
-
-.math-chip .katex {
-    margin: 0;
-}
-
-/* ----- Utility Components ----- */
-.alert {
-    padding: 15px 20px;
-    margin-bottom: 20px;
-    border: 1px solid transparent;
-    border-radius: 8px;
-    font-size: 0.95rem;
-}
-
-.alert-info {
-    color: #0c5460;
-    background-color: #d1ecf1;
-    border-color: #bee5eb;
-}
-
-.alert-warning {
-    color: #856404;
-    background-color: #fff3cd;
-    border-color: #ffeeba;
-}
-
-.key-concepts {
-    margin: 30px 0;
-    padding: 20px;
-    border-left: 5px solid var(--accent-color);
-    border-radius: 0 8px 8px 0;
-    background-color: var(--secondary-bg);
-}
-
-.key-concepts h3 {
-    margin-top: 0;
-    color: #007bff;
-}
-
-.key-concepts ul {
-    margin: 0;
-    padding-left: 0;
-    list-style: none;
-}
-
-.key-concepts li {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 10px;
     margin-bottom: 10px;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 6px;
+}
+.applet-info {
+    margin-top: 10px;
+    text-align: center;
+    font-family: monospace;
+    color: var(--secondary-accent);
 }
 
-.knowledge-check {
-    margin: 30px 0;
+/* ----- Math & Utility ----- */
+.math-chip {
+    display: inline-block; /* Use inline-block for better spacing */
+    padding: 0.2rem 0.7rem; /* More vertical and horizontal padding */
+    margin: 0 0.15rem;
+    border-radius: 6px; /* Slightly less rounded */
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--borders-low-contrast);
+    white-space: nowrap;
+    font-size: 1em; /* Make it match surrounding text size */
+    vertical-align: baseline;
 }
 
 .knowledge-check details {
     margin-bottom: 10px;
     padding: 10px 15px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--borders-low-contrast);
     border-radius: 8px;
-    background: var(--secondary-bg);
+    background: var(--primary-bg);
 }
 
 .knowledge-check summary {
     font-weight: 600;
     cursor: pointer;
     outline: none;
+    color: var(--secondary-accent);
 }
 
-.knowledge-check .answer {
-    margin-top: 10px;
-    padding: 10px 0 0 15px;
-    border-top: 1px solid #eee;
-    color: var(--text-color);
-}
-
-.additional-resources ul {
-    padding-left: 25px;
-    list-style-type: '🔗';
-}
-
-.additional-resources li {
-    padding-left: 2px;
-    margin-bottom: 8px;
-}
-.additional-resources li {
-    padding-left: 10px;
-    margin-bottom: 8px;
-}
-
-.video-container {
-    position: relative;
-    height: 0;
-    max-width: 100%;
-    margin: 20px 0;
-    padding-bottom: 56.25%;
-    overflow: hidden;
-    border-radius: 8px;
-    background: #000;
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
+/* ----- Mobile Responsive Rules ----- */
 #menu-toggle {
     display: none;
     font-size: 24px;
@@ -446,11 +286,11 @@ a.current-page {
     background: none;
     color: var(--accent-color);
     cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 
-/* ==================================================================
-   Responsive Tweaks
-   ================================================================== */
 @media (max-width: 768px) {
     body {
         flex-direction: column;
@@ -460,6 +300,7 @@ a.current-page {
         display: none;
         width: 100%;
         height: auto;
+        border-right: none;
     }
 
     #sidebar-container.visible {
@@ -472,18 +313,83 @@ a.current-page {
 
     .content {
         width: 100%;
-        padding: 24px 20px 40px;
+        padding: 60px 20px 40px;
     }
 }
 
-@media (max-width: 600px) {
-    .operation-card header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.3rem;
-    }
-
-    .math-chip {
-        margin: 0.1rem 0.15rem;
-    }
+.equation-box {
+    background-color: var(--primary-bg);
+    border: 1px solid var(--borders-low-contrast);
+    border-left: 4px solid var(--secondary-accent); /* Accent line */
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    margin: 1.25rem 0;
+    overflow-x: auto;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
 }
+.equation-box .katex-display {
+    text-align: left; /* Align left for readability */
+    margin: 0;
+}
+
+/* NEW: Styles for multi-step equations */
+.equation-steps {
+    border-radius: 8px;
+    margin: 1.25rem 0;
+    overflow: hidden; /* To contain the children's borders */
+    border: 1px solid var(--borders-low-contrast);
+}
+.equation-step {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-bg);
+    border-bottom: 1px solid var(--borders-low-contrast);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.equation-steps .equation-step:last-child {
+    border-bottom: none;
+}
+.equation-step .step-math {
+    flex-grow: 1; /* Math takes up available space */
+}
+.equation-step .step-annotation {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+/* NEW: Styling applet sliders with parameter colors */
+.applet-controls label[data-param-color="a"] { color: var(--param-a-color); }
+.applet-controls label[data-param-color="h"] { color: var(--param-h-color); }
+.applet-controls label[data-param-color="k"] { color: var(--param-k-color); }
+
+.media-container {
+    margin: 2rem 0;
+    border-radius: 12px;
+    overflow: hidden; /* Ensures the border-radius applies to content */
+    border: 1px solid var(--borders-low-contrast);
+    background-color: #000; /* Black background for videos */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.video-placeholder {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+}
+
+.video-placeholder iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.image-placeholder {
+    width: 100%;
+    display: block;
+    /* Add any other specific image styling here */
+}
+

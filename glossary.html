@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glossary</title>
     <link rel="stylesheet" href="themes/formal-sci-themes.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="themes/homepage-styles.css"> <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
@@ -49,7 +49,6 @@
         <section class="topic-article" id="glossary-list">
             <h2>Terms</h2>
             <div class="concept-grid">
-                <!-- Mathematics -->
                 <div class="concept-card glossary-item" data-tags="mathematics" data-term="Function">
                     <h3>Function</h3>
                     <p>A relation that assigns each input exactly one output; often written as $f(x)$.</p>
@@ -64,9 +63,7 @@
                     <h3>Factor</h3>
                     <p>To rewrite an expression as a product of simpler expressions; e.g., $x^2-9=(x-3)(x+3)$.</p>
                     <div class="applet-controls"><span class="applet-status">Algebra</span></div>
-                </div>
-                
-                <!-- Geometry / Trig -->
+                </div>             
                 <div class="concept-card glossary-item" data-tags="geometry" data-term="Angle">
                     <h3>Angle</h3>
                     <p>Formed by two rays with a common endpoint; measured in degrees or radians.</p>
@@ -76,9 +73,7 @@
                     <h3>Unit Circle</h3>
                     <p>The circle of radius 1 centered at the origin; defines $\sin\theta$ and $\cos\theta$ as coordinates.</p>
                     <div class="applet-controls"><span class="applet-status">Trigonometry</span></div>
-                </div>
-                
-                <!-- Calculus -->
+                </div>               
                 <div class="concept-card glossary-item" data-tags="calculus" data-term="Derivative">
                     <h3>Derivative</h3>
                     <p>Instantaneous rate of change; the slope of the tangent line to a function at a point.</p>
@@ -88,9 +83,7 @@
                     <h3>Integral</h3>
                     <p>Accumulation or signed area under a curve; inverse operation to differentiation (FTC links them).</p>
                     <div class="applet-controls"><span class="applet-status">Calculus</span></div>
-                </div>
-                
-                <!-- Statistics -->
+                </div>               
                 <div class="concept-card glossary-item" data-tags="statistics" data-term="Mean">
                     <h3>Mean</h3>
                     <p>Arithmetic average; sum of values divided by count.</p>
@@ -105,9 +98,7 @@
                     <h3>Probability</h3>
                     <p>A number between 0 and 1 describing the likelihood of an event.</p>
                     <div class="applet-controls"><span class="applet-status">Statistics</span></div>
-                </div>
-                
-                <!-- Linear Algebra -->
+                </div>              
                 <div class="concept-card glossary-item" data-tags="linear-algebra" data-term="Vector">
                     <h3>Vector</h3>
                     <p>An element of a vector space; can be represented as an ordered list of components.</p>
@@ -117,9 +108,7 @@
                     <h3>Matrix</h3>
                     <p>A rectangular array of numbers representing a linear transformation or system of equations.</p>
                     <div class="applet-controls"><span class="applet-status">Linear Algebra</span></div>
-                </div>
-                
-                <!-- CS / Logic / General -->
+                </div>             
                 <div class="concept-card glossary-item" data-tags="computer-science" data-term="Algorithm">
                     <h3>Algorithm</h3>
                     <p>A finite set of step-by-step instructions for solving a class of problems.</p>
@@ -129,6 +118,21 @@
                     <h3>Proof</h3>
                     <p>A logically sound argument establishing the truth of a statement from accepted premises.</p>
                     <div class="applet-controls"><span class="applet-status">Logic</span></div>
+                </div>
+                <div class="concept-card glossary-item" data-tags="algebra,mathematics" data-term="Polynomial">
+                    <h3>Polynomial</h3>
+                    <p>An expression of more than two algebraic terms, especially the sum of several terms that contain different powers of the same variable(s).</p>
+                    <div class="applet-controls"><span class="applet-status">Algebra</span></div>
+                </div>
+                <div class="concept-card glossary-item" data-tags="algebra,mathematics" data-term="Degree">
+                    <h3>Degree (of a Polynomial)</h3>
+                    <p>The highest exponent of the variable in a polynomial. For example, the degree of <span class="math-chip">3x^4 + 2x^2 + 5</span> is 4.</p>
+                    <div class="applet-controls"><span class="applet-status">Algebra</span></div>
+                </div>
+                <div class="concept-card glossary-item" data-tags="algebra,mathematics" data-term="Factoring">
+                    <h3>Factoring</h3>
+                    <p>The process of finding what to multiply together to get an expression. It is the decomposition of a polynomial into a product of other, simpler polynomials.</p>
+                    <div class="applet-controls"><span class="applet-status">Algebra</span></div>
                 </div>
             </div>
             <div id="glossary-empty" style="display:none; margin-top:10px; color: var(--text-muted)">No terms match your filters.</div>
