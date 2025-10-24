@@ -25,13 +25,13 @@
                 <li>This page covers core concepts, from simplifying expressions to solving quadratic equations.</li>
             </ul>
         </article>
-
+        <!--expressions-->
         <section class="topic-article" id="expressions-variables">
-            <h2>Expressions & Variables</h2>
+            <h2>Expressions, Variables & Properties</h2>
             <ul>
                 <li><strong>Expressions</strong> are like mathematical phrases, built from numbers, variables, and operations.</li>
                 <li>A <strong>variable</strong>, like <span class="math-chip">x</span>, is a placeholder for a value that can change.</li>
-                <li><strong>Simplifying</strong> an expression means rewriting it in a more compact and clear form.</li>
+                <li><strong>Simplifying</strong> an expression means rewriting it in a more compact and clear form using established rules.</li>
             </ul>
             
             <div class="media-container">
@@ -42,6 +42,23 @@
 
             <div class="concept-grid">
                 <div class="concept-card">
+                    <h3>Order of Operations (PEMDAS)</h3>
+                    <p>The required sequence to simplify any expression. It ensures everyone gets the same answer.</p>
+                     <div class="equation-box">
+                        $$ \text{1. } \textbf{P} \text{arentheses} $$
+                        $$ \text{2. } \textbf{E} \text{xponents} $$
+                        $$ \text{3. } \textbf{M} \text{ultiplication } \& \textbf{D} \text{ivision} $$
+                        $$ \text{4. } \textbf{A} \text{ddition } \& \textbf{S} \text{ubtraction} $$
+                    </div>
+                </div>
+                <div class="concept-card">
+                    <h3>Combining Like Terms</h3>
+                    <p>"Like terms" have the same variable part. You can combine them using addition or subtraction.</p>
+                    <div class="equation-box">
+                        $$ 3x + 5x = (3+5)x = 8x $$
+                    </div>
+                </div>
+                <div class="concept-card">
                     <h3>The Distributive Property</h3>
                     <p>This rule is key to simplifying. It lets you multiply a term across parentheses.</p>
                      <div class="equation-box">
@@ -49,22 +66,130 @@
                     </div>
                 </div>
                 <div class="concept-card">
-                    <h3>Combining Like Terms</h3>
-                    <p>"Like terms" have the same variable part. You can combine them using addition or subtraction.</p>
+                    <h3>Commutative Property</h3>
+                    <p>The "commute" property. The order doesn't matter for addition or multiplication.</p>
                     <div class="equation-box">
-                        $$3x + 5x = 8x$$
+                        $$ a+b = b+a $$
+                        $$ a \cdot b = b \cdot a $$
+                    </div>
+                </div>
+                <div class="concept-card">
+                    <h3>Associative Property</h3>
+                    <p>The "associate" property. The grouping of numbers doesn't matter for addition or multiplication.</p>
+                    <div class="equation-box">
+                        $$ (a+b)+c = a+(b+c) $$
+                        $$ (a \cdot b) \cdot c = a \cdot (b \cdot c) $$
+                    </div>
+                </div>
+                <div class="concept-card">
+                    <h3>Identity Properties</h3>
+                    <p>The "identity" properties. Adding 0 or multiplying by 1 changes nothing.</p>
+                    <div class="equation-box">
+                        $$ a + 0 = a \text{ (Additive)} $$
+                        $$ a \cdot 1 = a \text{ (Multiplicative)} $$
+                    </div>
+                </div>
+                <div class="concept-card">
+                    <h3>Inverse Properties</h3>
+                    <p>The "inverse" properties. Adding an opposite gives 0; multiplying by a reciprocal gives 1.</p>
+                    <div class="equation-box">
+                        $$ a + (-a) = 0 \text{ (Additive)} $$
+                        $$ a \cdot \frac{1}{a} = 1 \text{ (Multiplicative)} $$
+                    </div>
+                </div>
+                <div class="concept-card">
+                    <h3>Zero Property</h3>
+                    <p>Anything multiplied by zero is zero.</p>
+                    <div class="equation-box">
+                        $$ a \cdot 0 = 0 $$
                     </div>
                 </div>
             </div>
+
+            <article class="applet-showcase">
+                <h3>Interactive Simplifier</h3>
+                <p>Simplifying expressions is a step-by-step process. Use the buttons in the correct order to simplify the expression below. Each button applies one of the properties you just learned.</p>
+                <div data-applet-id="simplifier-applet" class="applet-container">
+                    </div>
+            </article>
         </section>
-        
-        <section class="topic-article" id="equations-inequalities">
+        <!--functions-->
+        <section class="topic-article" id="functions">
+            <h2>Introduction to Functions</h2>
+            <ul>
+                <li>A <strong>function</strong> is a rule that assigns exactly one output for each input.</li>
+                <li>We use <strong>function notation</strong>, <span class="math-chip">f(x)</span> (read "f of x"), to represent the output.</li>
+                <li>The <strong>domain</strong> is the set of all possible inputs ($x$-values), and the <strong>range</strong> is the set of all possible outputs ($y$-values).</li>
+            </ul>
+
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Four Representations</h3>
+                    <p>We can describe the same function in four different ways. For example, "the output is one more than twice the input":</p>
+                    <div class="equation-steps">
+                        <div class="equation-step">
+                            <div class="step-math"><strong>Equation:</strong></div>
+                            <div class="step-annotation">$f(x) = 2x + 1$</div>
+                        </div>
+                        <div class="equation-step">
+                            <div class="step-math"><strong>Table:</strong></div>
+                            <div class="step-annotation">
+                                x = -1, 0, 1<br>
+                                y = -1, 1, 3
+                            </div>
+                        </div>
+                        <div class="equation-step">
+                            <div class="step-math"><strong>Graph:</strong></div>
+                            <div class="step-annotation">[A straight line]</div>
+                        </div>
+                        <div class="equation-step">
+                            <div class="step-math"><strong>Verbal:</strong></div>
+                            <div class="step-annotation">"One more than 2x"</div>
+                        </div>
+                    </div>
+                </div>
+                <article class="applet-showcase">
+                    <h3>Interactive: The Vertical Line Test</h3>
+                    <p>Move your mouse left and right over the graphs. A graph is a function if (and only if) your vertical line *never* intersects the curve more than once.</p>
+                    <div data-applet-id="vertical-line-tester" class="applet-container"></div>
+                </article>
+                <div class="concept-card">
+                    <h3>Function Notation</h3>
+                    <p>If <span class="math-chip">f(x) = 2x + 1</span>, finding <span class="math-chip">f(3)</span> means "plug in 3 for x".</p>
+                    <div class="equation-box">
+                        $$f(3) = 2(3) + 1 = 6 + 1 = 7$$
+                    </div>
+                    <p>The input is 3, the output is 7. This gives us the point $(3, 7)$ on the graph.</p>
+                </div>
+                <article class="applet-showcase">
+                    <h3>Visualization: Domain & Range</h3>
+                    <p>The <strong>Domain</strong> is the set of all possible $x$-values (the "shadow" on the x-axis). The <strong>Range</strong> is the set of all possible $y$-values (the "shadow" on the y-axis).</p>
+                    <div data-applet-id="domain-range-viz" class="applet-container"></div>
+                </article>
+            </div>
+
+            <article class="applet-showcase">
+                <h3>Interactive Function Machine</h3>
+                <p>A function is a rule. This machine takes an $x$-value you provide, applies the rule $f(x)$, and spits out the resulting $y$-value.</p>
+                <div data-applet-id="function-machine" class="applet-container">
+                    </div>
+            </article>
+        </section>
+        <!--linear equations-->
+        <section class="topic-article" id="linear-equations">
             <h2>Solving Linear Equations</h2>
             <ul>
                 <li>An <strong>equation</strong> is a statement that two expressions are equal. Think of it as a balanced scale.</li>
-                <li>To <strong>solve</strong> an equation, find the value of the variable that keeps the scale balanced.</li>
-                <li>The core rule: whatever you do to one side, you must do to the other.</li>
+                <li>To <strong>solve</strong> an equation, you find the value of the variable that keeps the scale balanced.</li>
+                <li>The golden rule: <strong>Whatever you do to one side, you *must* do to the other.</strong></li>
             </ul>
+
+            <article class="applet-showcase">
+                <h3>Interactive: The Algebra Scale</h3>
+                <p>This scale represents the equation $2x + 3 = 7$. Use the buttons to perform operations on *both sides* to isolate $x$ and keep the scale balanced.</p>
+                <div data-applet-id="algebra-scale" class="applet-container">
+                    </div>
+            </article>
 
             <div class="concept-grid">
                 <div class="concept-card">
@@ -76,8 +201,8 @@
                             <div class="step-annotation">Starting equation</div>
                         </div>
                         <div class="equation-step">
-                             <div class="step-math">$$3x = 15$$</div>
-                             <div class="step-annotation">Add 4 to both sides</div>
+                            <div class="step-math">$$3x = 15$$</div>
+                            <div class="step-annotation">Add 4 to both sides</div>
                         </div>
                         <div class="equation-step">
                             <div class="step-math">$$x = 5$$</div>
@@ -86,20 +211,149 @@
                     </div>
                 </div>
                 <div class="concept-card">
-                    <h3>Visualizing the Solution</h3>
+                    <h3>Variables on Both Sides</h3>
+                    <p>Your first goal is to gather all $x$ terms on one side and all constant terms on the other.</p>
+                    <div class="equation-steps">
+                        <div class="equation-step">
+                            <div class="step-math">$$5x - 3 = 2x + 9$$</div>
+                            <div class="step-annotation">Starting equation</div>
+                        </div>
+                        <div class="equation-step">
+                            <div class="step-math">$$3x - 3 = 9$$</div>
+                            <div class="step-annotation">Subtract 2x from both sides</div>
+                        </div>
+                        <div class="equation-step">
+                            <div class="step-math">$$3x = 12$$</div>
+                            <div class="step-annotation">Add 3 to both sides</div>
+                        </div>
+                        <div class="equation-step">
+                            <div class="step-math">$$x = 4$$</div>
+                            <div class="step-annotation">Divide both sides by 3</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="concept-card">
+                    <h3>Special Case: No Solution</h3>
+                    <p>If you solve an equation and end up with a false statement (like $3=7$), it means there is no value of $x$ that can make it true.</p>
+                    <div class="equation-box">
+                        $$ 2(x+1) = 2x + 5 $$
+                        $$ 2x + 2 = 2x + 5 $$
+                        $$ 2 = 5 \text{ (False)} \rightarrow \text{No Solution} $$
+                    </div>
+                </div>
+                <div class="concept-card">
+                    <h3>Special Case: Infinite Solutions</h3>
+                    <p>If you end up with a true statement (like $5=5$), it means *any* value of $x$ will make the equation true. This is called an identity.</p>
+                    <div class="equation-box">
+                        $$ 2(x+1) = 2x + 2 $$
+                        $$ 2x + 2 = 2x + 2 $$
+                        $$ 2 = 2 \text{ (True)} \rightarrow \text{Infinite Solutions} $$
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--linear inequalities-->
+        <section class="topic-article" id="linear-inequalities">
+            <h2>Solving Linear Inequalities</h2>
+            <ul>
+                <li>An <strong>inequality</strong> compares two expressions using <span class="math-chip"><</span> (less than), <span class="math-chip">></span> (greater than), <span class="math-chip">≤</span>, or <span class="math-chip">≥</span>.</li>
+                <li>The solution is often a *range* of numbers, not just one.</li>
+                <li><strong>The Golden Rule:</strong> If you multiply or divide both sides by a **negative number**, you must **flip** the inequality sign.</li>
+            </ul>
+
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Solving an Inequality</h3>
+                    <p>Solve it just like an equation, but remember the "Golden Rule".</p>
+                    <div class="equation-steps">
+                        <div class="equation-step">
+                            <div class="step-math">$$-2x + 5 < 11$$</div>
+                            <div class="step-annotation">Starting inequality</div>
+                        </div>
+                        <div class="equation-step">
+                            <div class="step-math">$$-2x < 6$$</div>
+                            <div class="step-annotation">Subtract 5 from both sides</div>
+                        </div>
+                        <div class="equation-step">
+                            <div class="step-math">$$x > -3$$</div>
+                            <div class="step-annotation">Divide by -2 (and <strong>flip the sign!</strong>)</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="concept-card">
+                    <h3>Graphing on a Number Line</h3>
+                    <p>We use an <strong>open circle</strong> ( $ <, > $ ) for numbers that are *not* included, and a <strong>closed circle</strong> ( $ \le, \ge $ ) for numbers that *are* included.</p>
+                    <div class="media-container">
+                        <img src="https://via.placeholder.com/600x200.png?text=Graph+of+x+>+-3" alt="Number line graph for an inequality" class="image-placeholder">
+                    </div>
+                </div>
+            </div>
+            <article class="applet-showcase">
+                <h3>Interactive: Compound Inequality Shader</h3>
+                <p>Compound inequalities combine two rules. Use the buttons to see how "AND" (intersection) and "OR" (union) are graphed differently.</p>
+                <div data-applet-id="inequality-shader" class="applet-container">
+                    </div>
+            </article>
+            <div class="concept-card">
+                <h3>Graphing on a 2D Plane</h3>
+                <p>Graphing inequalities like $y < x$ involves two steps:</p>
+                <ol class="styled-list">
+                    <li><strong>Boundary Line:</strong> Draw the line $y=x$.
+                        <ul>
+                            <li>Use a <strong>dashed line</strong> for $ < $ or $ > $.</li>
+                            <li>Use a <strong>solid line</strong> for $ \le $ or $ \ge $.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Shade:</strong> Shade the entire region that makes the inequality true. (Tip: Test a point like $(1,0)$!)</li>
+                </ol>
+                <div class="graph-2d-container">
+                    <div class="graph-2d-grid"></div>
+                    <div class="boundary-line-dashed"></div>
+                    <div class="shaded-region"></div>
+                    <span class="graph-label">y < x</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="topic-article" id="systems-of-equations">
+            <h2>Systems of Equations & Inequalities</h2>
+            <ul>
+                <li>A <strong>system of equations</strong> is a set of two or more equations that share the same variables.</li>
+                <li>The <strong>solution</strong> is the point (or points) that make *all* equations in the system true.</li>
+            </ul>
+
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Solving by Graphing</h3>
                     <p>The solution to a system of two linear equations is the point where their graphs intersect.</p>
                     <div class="media-container">
                         <img src="https://via.placeholder.com/600x400.png?text=Graph+of+Intersecting+Lines" alt="Graph of two intersecting lines" class="image-placeholder">
+                    </div>
+                </div>
+                <div class="concept-card">
+                    <h3>Solving by Substitution</h3>
+                    <p>Solve one equation for a variable (e.g., $y = \dots$), then substitute that expression into the other equation.</p>
+                    <div class="equation-box">$$ y = 2x $$ $$ x + y = 9 $$ $$ \rightarrow x + (2x) = 9 \rightarrow 3x = 9 \rightarrow x=3 $$</div>
+                </div>
+                 <div class="concept-card">
+                    <h3>Solving by Elimination</h3>
+                    <p>Add or subtract the equations to "eliminate" one of the variables, then solve for the other.</p>
+                    <div class="equation-box">$$ (2x + y = 7) $$ $$ +(3x - y = 8) $$ $$ \rightarrow 5x = 15 \rightarrow x=3 $$</div>
+                </div>
+                <div class="concept-card">
+                    <h3>Graphing Systems of Inequalities</h3>
+                    <p>Graph each inequality and shade the correct region. The solution is the area where the shadings overlap.</p>
+                    <div class="media-container">
+                        <img src="https://via.placeholder.com/600x400.png?text=Graph+of+Overlapping+Shaded+Regions" alt="Graph of a system of inequalities" class="image-placeholder">
                     </div>
                 </div>
             </div>
         </section>
         
         <section class="topic-article" id="polynomials-factoring">
-            <h2>Polynomials & Factoring</h2>
+            <h2>Polynomials, Factoring & Rational Expressions</h2>
             <ul>
                 <li>A <strong>polynomial</strong> is an expression with multiple terms, often involving different powers of a variable, like <span class="math-chip">3x^2 + 2x - 5</span>.</li>
-                <li>The highest exponent in a polynomial is called its <strong>degree</strong>.</li>
                 <li><strong>Factoring</strong> is the process of breaking a polynomial down into simpler expressions that multiply together.</li>
             </ul>
 
@@ -111,14 +365,19 @@
 
             <div class="concept-grid">
                 <div class="concept-card">
-                    <h3>Standard Form</h3>
-                    <p>Writing a polynomial from its highest degree to its lowest is called standard form. It helps identify the leading term.</p>
-                    <div class="equation-box">$$ P(x) = a_n x^n + a_{n-1}x^{n-1} + \dots + a_1 x + a_0 $$</div>
+                    <h3>Factoring Example (Trinomial)</h3>
+                    <p>Factoring reveals the roots (x-intercepts) of the polynomial.</p>
+                     <div class="equation-box">$$x^2 - 5x + 6 = (x-2)(x-3)$$</div>
                 </div>
                 <div class="concept-card">
-                    <h3>Factoring Example</h3>
-                    <p>Factoring reveals the roots (x-intercepts) of the polynomial. For example, factoring a trinomial:</p>
-                     <div class="equation-box">$$x^2 - 5x + 6 = (x-2)(x-3)$$</div>
+                    <h3>Factoring: Difference of Squares</h3>
+                    <p>A common pattern that is essential to recognize for simplifying.</p>
+                     <div class="equation-box">$$a^2 - b^2 = (a-b)(a+b)$$</div>
+                </div>
+                 <div class="concept-card">
+                    <h3>Rational Expressions</h3>
+                    <p>A rational expression is a fraction where the numerator and denominator are polynomials.</p>
+                     <div class="equation-box">$$ \frac{x^2 - 4}{x+2} = \frac{(x-2)(x+2)}{x+2} = x-2 $$</div>
                 </div>
             </div>
             
@@ -131,8 +390,23 @@
             <ul>
                 <li>Quadratic equations involve a variable squared (<span class="math-chip">x^2</span>).</li>
                 <li>Their graphs are U-shaped curves called <strong>parabolas</strong>.</li>
-                <li>The <strong>vertex form</strong>, <span class="math-chip">y = a(x-h)^2 + k</span>, is perfect for understanding the graph's shape and position.</li>
             </ul>
+
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <h3>Solving by Factoring</h3>
+                    <p>If <span class="math-chip">(x-2)(x-3) = 0</span>, then the solutions are $x=2$ or $x=3$ (the "Zero Product Property").</p>
+                </div>
+                <div class="concept-card">
+                    <h3>The Quadratic Formula</h3>
+                    <p>A catch-all formula to find the roots ($x$-intercepts) of *any* quadratic equation in the form $ax^2+bx+c=0$.</p>
+                    <div class="equation-box">$$ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$</div>
+                </div>
+                <div class="concept-card">
+                    <h3>Vertex Form</h3>
+                    <p>The vertex form, <span class="math-chip">y = a(x-h)^2 + k</span>, is perfect for understanding the graph's shape and position. The vertex is at $(h, k)$.</p>
+                </div>
+            </div>
             
             <div data-applet-id="parabola-explorer" class="applet-container"></div>
         </section>

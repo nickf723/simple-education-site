@@ -185,6 +185,21 @@ a.current-page {
     border: none;
 }
 
+/* Fix for overflowing equation boxes in concept cards */
+.concept-card .equation-box {
+    overflow-x: hidden !important; /* Remove the horizontal scrollbar */
+    padding: 1rem;      /* Readjust padding */
+}
+
+/* This rule ensures the KaTeX text inside will
+  wrap properly instead of overflowing.
+*/
+.concept-card .equation-box .katex-display {
+    white-space: normal;
+    overflow-wrap: break-word;
+    overflow-x: hidden;
+}
+
 /* ----- NEW: Applet Section Styling ----- */
 /* This creates a dedicated container for applets inside a topic article. */
 .applet-section {
@@ -393,3 +408,865 @@ a.current-page {
     /* Add any other specific image styling here */
 }
 
+/*
+=================================================
+  APPLET: STEP-BY-STEP SIMPLIFIER
+=================================================
+*/
+
+/* This is the class for the new showcase box */
+.applet-showcase {
+    background-color: var(--secondary-bg); /* FIXED: Used existing variable */
+    border: 1px solid var(--borders-low-contrast); /* FIXED: Used existing variable */
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+.applet-showcase h3 {
+    margin-top: 0;
+    border-bottom: 2px solid var(--secondary-accent); /* FIXED: Used existing variable */
+    padding-bottom: 0.5rem;
+}
+
+/* This is the container *inside* the data-applet-id div */
+.simplifier-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.simplifier-display .equation-box {
+    background-color: var(--primary-bg); /* FIXED: Used existing variable */
+    text-align: center;
+    font-size: 1.5rem; /* Make the math nice and big */
+    padding: 1.5rem;
+}
+
+.simplifier-message {
+    background-color: var(--primary-bg); /* FIXED: Used existing variable */
+    border: 1px solid var(--borders-low-contrast); /* FIXED: Used existing variable */
+    border-radius: 6px;
+    padding: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    transition: background-color 0.3s ease;
+}
+
+.simplifier-message.success {
+    background-color: #e0f8e6;
+    border-color: #5cb85c;
+    color: #1a1a1a; /* ADDED: Dark text for light background */
+}
+
+.simplifier-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--borders-low-contrast); /* FIXED: Used existing variable */
+}
+
+.simplifier-steps button {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: var(--secondary-accent); /* FIXED: Used existing variable */
+    color: #ffffff; /* FIXED: Used #ffffff */
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.simplifier-steps button:not(:disabled):hover {
+    background-color: #0097a7; /* FIXED: Hardcoded darker cyan */
+    transform: translateY(-2px);
+}
+
+.simplifier-steps button:disabled {
+    background-color: #a0a0a0; /* Gray for disabled */
+    color: #e0e0e0;
+    cursor: not-allowed;
+}
+
+.simplifier-steps button.reset-button {
+    background-color: #d9534f; /* A red for reset */
+}
+.simplifier-steps button.reset-button:hover {
+    background-color: #c9302c;
+}
+
+/*
+=================================================
+  APPLET: FUNCTION MACHINE (v2 - Triple)
+=================================================
+*/
+
+.function-machine-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.fm-box {
+    background-color: var(--primary-bg);
+    border: 1px solid var(--borders-low-contrast);
+    border-radius: 8px;
+    padding: 1rem;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    text-align: center;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.fm-box label {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.fm-box input[type="number"],
+.fm-box input[type="text"] {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem; /* Slightly smaller to fit */
+    font-weight: 700;
+    color: var(--text-color);
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--borders-low-contrast);
+    border-radius: 6px;
+    padding: 0.5rem 0.75rem;
+    width: 100%;
+    box-sizing: border-box; /* Important for padding */
+    text-align: center;
+}
+
+.fm-input-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.fm-input-controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.fm-input-box input[type="number"] {
+    width: 120px !important; /* Fixed width for the number input */
+}
+
+.fm-input-box button {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: var(--secondary-accent);
+    color: #ffffff;
+    transition: background-color 0.2s ease;
+}
+
+.fm-input-box button:hover {
+    background-color: #0097a7; /* Darker cyan */
+}
+
+.fm-arrow {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    padding: 0.5rem 0;
+    text-align: center;
+}
+
+.fm-rule-box {
+    border-width: 2px;
+    border-style: dashed;
+}
+
+/* NEW: Grid for the three machines */
+.fm-triple-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 1.5rem;
+}
+
+.fm-machine-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* NEW: Color coding for the rules */
+.fm-rule-f { border-color: var(--param-a-color); }
+.fm-rule-g { border-color: var(--param-h-color); }
+.fm-rule-h { border-color: var(--param-k-color); }
+
+.fm-rule-f label { color: var(--param-a-color); }
+.fm-rule-g label { color: var(--param-h-color); }
+.fm-rule-h label { color: var(--param-k-color); }
+
+.fm-output-display {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--borders-low-contrast);
+    border-radius: 6px;
+    padding: 0.75rem;
+    min-height: 3rem;
+    line-height: 3rem;
+    transition: all 0.3s ease;
+}
+
+.fm-output-display.success {
+    color: #00e676; /* Green */
+    border-color: #00e676;
+    transform: scale(1.05);
+}
+
+.fm-output-display.error {
+    color: #ff5252; /* Red */
+    border-color: #ff5252;
+}
+
+.fm-message {
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.75rem;
+    border-radius: 6px;
+    display: none; /* Hidden by default */
+    width: 100%;
+    box-sizing: border-box;
+    line-height: 1.3;
+}
+
+.fm-message.success {
+    display: block;
+    background-color: rgba(0, 230, 118, 0.1);
+    color: #00e676;
+}
+
+.fm-message.error {
+    display: block;
+    background-color: rgba(255, 82, 82, 0.1);
+    color: #ff5252;
+}
+
+/* Media query for wider screens */
+@media (min-width: 768px) {
+    .fm-triple-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+    }
+}
+
+/*
+=================================================
+  APPLET: VERTICAL LINE TESTER
+=================================================
+*/
+.vlt-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+@media (min-width: 600px) {
+    .vlt-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.vlt-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.vlt-graph {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background-color: var(--primary-bg);
+    border: 1px solid var(--borders-low-contrast);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: none; /* Hide cursor, line will follow instead */
+    /* Simple grid background */
+    background-image: 
+        linear-gradient(rgba(68, 68, 68, 0.5) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(68, 68, 68, 0.5) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* The vertical line that follows the mouse */
+.vlt-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--secondary-accent);
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.1s ease;
+    box-shadow: 0 0 10px var(--secondary-accent);
+}
+
+/* The function curves */
+.vlt-curve-pass, .vlt-curve-fail {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-style: solid;
+    border-color: var(--accent-color); /* Use main accent color */
+    border-width: 4px; /* Make curve thicker */
+    box-shadow: 0 0 12px var(--accent-color);
+}
+
+/* y = x^2 style parabola */
+.vlt-curve-pass {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 50% / 0 0 100% 100%;
+    transform: translateY(20%);
+}
+
+/* x = y^2 style parabola */
+.vlt-curve-fail {
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-radius: 0 100% 100% 0 / 50%;
+    transform: translateX(50%);
+    width: 50%;
+}
+
+.vlt-status-box {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vlt-status-box[data-status="pass"] {
+    background-color: rgba(0, 230, 118, 0.1);
+    color: #00e676;
+}
+.vlt-status-box[data-status="fail"] {
+    background-color: rgba(255, 82, 82, 0.1);
+    color: #ff5252;
+}
+
+.vlt-intersections {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.concept-grid .applet-showcase {
+    grid-column: 1 / -1;
+}
+
+
+.dr-viz-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+@media (min-width: 768px) {
+    .dr-viz-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.dr-viz-graph {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-color: var(--primary-bg);
+    border: 1px solid var(--borders-low-contrast);
+    border-radius: 8px;
+    overflow: hidden;
+    /* Faint grid */
+    background-image: 
+        linear-gradient(rgba(68, 68, 68, 0.5) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(68, 68, 68, 0.5) 1px, transparent 1px);
+    background-size: 25% 25%; /* 4x4 Grid */
+}
+
+/* Re-using .dr-axis from previous applet */
+.dr-axis {
+    position: absolute;
+    background-color: var(--borders-low-contrast);
+}
+.dr-axis-x {
+    width: 100%;
+    height: 2px;
+    left: 0;
+    bottom: 25%; /* y=0 at 25% from bottom */
+    transform: translateY(50%);
+}
+.dr-axis-y {
+    width: 2px;
+    height: 100%;
+    bottom: 0;
+    left: 25%; /* x=0 at 25% from left */
+    transform: translateX(-50%);
+}
+
+/* Curves */
+.dr-curve-quadratic, .dr-curve-sqrt {
+    position: absolute;
+    border-style: solid;
+    border-color: var(--accent-color);
+    border-width: 4px;
+    box-shadow: 0 0 12px var(--accent-color);
+}
+.dr-curve-quadratic {
+    width: 70%;
+    height: 70%;
+    left: -10%;
+    bottom: 25%; /* Vertex on axis */
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 50% / 0 0 100% 100%;
+}
+.dr-curve-sqrt {
+    width: 75%;
+    height: 75%;
+    left: 25%; /* Start on axis */
+    bottom: 25%; /* Start on axis */
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 0 100% 0 0 / 0 100% 0 0;
+}
+
+/* Shadows */
+.dr-viz-shadow {
+    position: absolute;
+    z-index: -1; /* Behind axes */
+}
+.dr-viz-shadow.dr-shadow-x {
+    bottom: 0;
+    height: 100%;
+    background: linear-gradient(to top, rgba(64, 196, 255, 0.2), rgba(64, 196, 255, 0.0));
+    border-bottom: 3px solid var(--param-h-color);
+}
+.dr-viz-shadow.dr-shadow-y {
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, rgba(0, 230, 118, 0.2), rgba(0, 230, 118, 0.0));
+    border-left: 3px solid var(--param-k-color);
+}
+
+/* Labels */
+.dr-viz-label-title {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+.dr-viz-label-domain {
+    position: absolute;
+    bottom: 5px;
+    left: 28%;
+    color: var(--param-h-color);
+    font-weight: 700;
+    font-family: monospace;
+}
+.dr-viz-label-range {
+    position: absolute;
+    bottom: 28%;
+    left: 5px;
+    color: var(--param-k-color);
+    font-weight: 700;
+    font-family: monospace;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+/*
+=================================================
+  APPLET: ALGEBRA SCALE
+=================================================
+*/
+
+.scale-container {
+    position: relative;
+    height: 250px;
+    padding-bottom: 2rem;
+    overflow: hidden;
+}
+
+.scale-beam {
+    position: absolute;
+    bottom: 80px;
+    left: 10%;
+    width: 80%;
+    height: 10px;
+    background-color: var(--text-muted);
+    border-radius: 5px;
+    transition: transform 0.4s ease-in-out;
+}
+
+.scale-base {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 80px;
+    background-color: var(--text-muted);
+}
+.scale-base::before { /* Triangle fulcrum */
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 20px solid var(--text-muted);
+}
+
+.scale-pan {
+    position: absolute;
+    bottom: 20px; /* Hangs *from* the beam */
+    width: 120px;
+    min-height: 80px;
+    padding: 10px;
+    background-color: var(--secondary-bg);
+    border: 2px solid var(--text-muted);
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+    align-content: flex-start;
+    transition: transform 0.4s ease-in-out;
+}
+.scale-pan::before { /* String to hang from */
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background-color: var(--text-muted);
+}
+
+.scale-left { left: -40px; }
+.scale-right { right: -40px; }
+
+/* Scale tilt logic */
+.scale-beam.balanced { transform: rotate(0deg); }
+.scale-beam.tilt-left { transform: rotate(5deg); }
+.scale-beam.tilt-right { transform: rotate(-5deg); }
+.scale-beam.tilt-left .scale-pan { transform: translateY(-10px); }
+.scale-beam.tilt-right .scale-pan { transform: translateY(10px); }
+
+/* Items on the scale */
+.scale-item {
+    width: 25px;
+    height: 25px;
+    border-radius: 4px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-bg);
+}
+.item-x {
+    background-color: var(--param-a-color); /* Orange */
+}
+.item-const {
+    background-color: var(--param-h-color); /* Blue */
+}
+
+/* Equation and Controls */
+.scale-equation {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.scale-message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+.scale-message.error {
+    color: #ff5252;
+}
+.scale-message.success {
+    color: #00e676;
+}
+
+.scale-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.scale-controls button {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: var(--secondary-accent);
+    color: #ffffff;
+    transition: background-color 0.2s ease;
+}
+.scale-controls button:hover {
+    background-color: #0097a7; /* Darker cyan */
+}
+.scale-controls button[data-op="reset"] {
+    background-color: #d9534f;
+}
+.scale-controls button[data-op="reset"]:hover {
+    background-color: #c9302c;
+}
+
+/*
+=================================================
+  APPLET: COMPOUND INEQUALITY SHADER
+=================================================
+*/
+.inequality-controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+.inequality-controls button {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--borders-low-contrast);
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: var(--secondary-bg);
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+}
+.inequality-controls button:hover {
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+}
+.inequality-controls button.active {
+    background-color: var(--secondary-accent);
+    color: #fff;
+    border-color: var(--secondary-accent);
+}
+
+.inequality-label {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.number-line {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    height: 4px;
+    background-color: var(--text-muted);
+    border-radius: 2px;
+}
+
+.nl-tick {
+    position: absolute;
+    bottom: -5px;
+    height: 10px;
+    width: 2px;
+    background-color: var(--text-muted);
+    transform: translateX(-50%);
+}
+.nl-tick.nl-major {
+    height: 15px;
+    bottom: -7.5px;
+}
+.nl-label {
+    position: absolute;
+    top: 100%;
+    margin-top: 0.5rem;
+    color: var(--text-muted);
+    font-family: monospace;
+    transform: translateX(-50%);
+}
+
+.nl-shade {
+    position: absolute;
+    bottom: -4px;
+    height: 12px;
+    background-color: var(--param-h-color);
+    opacity: 0.6;
+    border-radius: 6px;
+    z-index: 1;
+}
+
+/* Arrows for the 'OR' rays */
+.nl-ray-left {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.nl-ray-left::before {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -4px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid var(--param-h-color);
+}
+.nl-ray-right {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+.nl-ray-right::after {
+    content: '';
+    position: absolute;
+    right: -2px;
+    top: -4px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid var(--param-h-color);
+}
+
+
+.nl-circle {
+    position: absolute;
+    bottom: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transform: translate(-50%, 50%);
+    z-index: 2;
+}
+.nl-open {
+    background-color: var(--primary-bg);
+    border: 4px solid var(--param-h-color);
+}
+.nl-closed {
+    background-color: var(--param-h-color);
+    border: 4px solid var(--param-h-color);
+}
+
+/*
+=================================================
+  STYLES: 2D INEQUALITY VISUALIZATION (FIXED)
+=================================================
+*/
+
+/* Used in the new 2D graphing card */
+.styled-list {
+    padding-left: 1.5rem;
+    font-size: 0.9rem;
+}
+.styled-list li {
+    margin-bottom: 0.5rem;
+}
+.styled-list ul {
+    padding-left: 1.25rem;
+    margin-top: 0.5rem;
+}
+
+.graph-2d-container {
+    position: relative;
+    width: 100%;
+    height: 175px;
+    background-color: var(--primary-bg);
+    border: 1px solid var(--borders-low-contrast);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.graph-2d-grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(68, 68, 68, 0.5) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(68, 68, 68, 0.5) 1px, transparent 1px);
+    background-size: 20% 20%; /* 5x5 Grid */
+    opacity: 0.5;
+}
+
+.boundary-line-dashed {
+    position: absolute;
+    left: -10%; /* Start off-screen */
+    bottom: 50%; /* Center vertically */
+    width: 120%; /* Span across */
+    height: 4px;
+    /* Create a dashed line with a gradient */
+    background-image: linear-gradient(to right, var(--accent-color) 70%, transparent 30%);
+    background-size: 20px 4px;
+    background-repeat: repeat-x;
+    transform: rotate(-45deg);
+    transform-origin: center;
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+.shaded-region {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* The line is at -45deg (315deg).
+      The gradient is perpendicular (315 - 90 = 225deg),
+      which shades the correct bottom-right half.
+    */
+    background: linear-gradient(225deg, 
+        rgba(64, 196, 255, 0.3), 
+        rgba(64, 196, 255, 0) 50%
+    );
+}
+
+.graph-label {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-family: monospace;
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 1rem;
+    background: rgba(26, 26, 26, 0.8);
+    padding: 2px 5px;
+    border-radius: 4px;
+}
